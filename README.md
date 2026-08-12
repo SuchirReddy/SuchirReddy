@@ -4,7 +4,7 @@
   <img src="./spiderman.svg" align="right" width="80" alt="Hanging Spider-Man" />
   <!-- Driver Intro & Podium Section (Borderless Side-by-Side) -->
   <div align="center">
-    <img src="./about-me.svg" alt="About Suchir" width="55%" /><img src="./driver-podium.svg" alt="F1 Driver Podium" width="35%" />
+    <img src="./about-me.svg" alt="About Suchir" width="48%" /><img src="./driver-podium.svg" alt="F1 Driver Podium" width="28%" />
   </div>
   <br/>
 
