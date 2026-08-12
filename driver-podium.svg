@@ -141,9 +141,37 @@
       <!-- Torso with rounded edges for volume -->
       <rect x="-30" y="-140" width="60" height="80" fill="url(#navy-cyl)" rx="15" />
       
-      <!-- Torso Accents (curved to simulate chest volume) -->
-      <path d="M-20,-130 Q0,-120 20,-130 L15,-80 Q0,-75 -15,-80 Z" fill="#FFC220" opacity="0.9" />
-      <path d="M-12,-120 Q0,-110 12,-120 L8,-90 Q0,-85 -8,-90 Z" fill="url(#red-cyl)" />
+      <!-- Spider-Man Red Chest -->
+      <path d="M-20,-140 Q0,-130 20,-140 L15,-75 Q0,-70 -15,-75 Z" fill="url(#red-cyl)" />
+      
+      <!-- Subtle Web Pattern on Chest -->
+      <g stroke="#111" stroke-width="1" opacity="0.4">
+        <path d="M 0,-135 L 0,-75" />
+        <path d="M -10,-135 L -10,-75" />
+        <path d="M 10,-135 L 10,-75" />
+        <path d="M -15,-120 Q 0,-110 15,-120" />
+        <path d="M -15,-100 Q 0,-90 15,-100" />
+        <path d="M -15,-85 Q 0,-75 15,-85" />
+      </g>
+
+      <!-- Realistic Spider Emblem -->
+      <g transform="translate(0, -105)">
+        <!-- Head & Abdomen -->
+        <circle cx="0" cy="-5" r="1.5" fill="#111" />
+        <polygon points="0,-3 -2,2 0,7 2,2" fill="#111" />
+        
+        <!-- Left Legs (Sharp & Menacing) -->
+        <path d="M -1,-3 L -10,-8 L -12, -2" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+        <path d="M -1,-1 L -12,-4 L -14, 3" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+        <path d="M -1,1 L -12, 4 L -12, 12" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+        <path d="M -1,3 L -8, 6 L -9, 16" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+        
+        <!-- Right Legs (Sharp & Menacing) -->
+        <path d="M 1,-3 L 10,-8 L 12, -2" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+        <path d="M 1,-1 L 12,-4 L 14, 3" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+        <path d="M 1,1 L 12, 4 L 12, 12" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+        <path d="M 1,3 L 8, 6 L 9, 16" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="miter"/>
+      </g>
       
       <!-- 3D Belt -->
       <rect x="-31" y="-75" width="62" height="12" fill="#111" rx="4" />
@@ -178,37 +206,32 @@
       <!-- Thick Neck / HANS padding -->
       <path d="M-20,-140 C-25,-160 25,-160 20,-140 Z" fill="#111" />
 
-      <!-- 3D HELMET (Premium Grey) -->
+      <!-- SPIDER-MAN HEAD (Replaces Helmet) -->
       <g transform="translate(0, -165)">
-        <!-- Aerodynamic Top Spoiler -->
-        <path d="M-15,-28 C0,-35 15,-28 10,-10 C0,-15 -10,-15 -15,-28 Z" fill="rgba(255,255,255,0.2)" />
+        <circle cx="0" cy="0" r="32" fill="url(#red-cyl)" />
         
-        <!-- Helmet Sphere -->
-        <circle cx="0" cy="0" r="32" fill="url(#helmet-grad)" />
-        <ellipse cx="0" cy="0" rx="30" ry="32" fill="none" stroke="#666" stroke-width="1" opacity="0.5" /> <!-- Contour -->
+        <!-- Web Pattern -->
+        <g stroke="#660000" stroke-width="1.2" opacity="0.6">
+          <path d="M 0,-32 L 0,32" />
+          <path d="M 0,0 Q -15,15 -22,23" />
+          <path d="M 0,0 Q 15,15 22,23" />
+          <path d="M 0,0 Q -25,0 -32,0" />
+          <path d="M 0,0 Q 25,0 32,0" />
+          <path d="M 0,0 Q -15,-15 -22,-23" />
+          <path d="M 0,0 Q 15,-15 22,-23" />
+          <ellipse cx="0" cy="0" rx="10" ry="10" fill="none" />
+          <ellipse cx="0" cy="0" rx="20" ry="20" fill="none" />
+          <ellipse cx="0" cy="0" rx="30" ry="30" fill="none" />
+        </g>
         
-        <!-- Premium Black/Grey Visor -->
-        <path d="M-26,4 C-10,18 10,18 26,4 C30,-16 20,-24 0,-26 C-20,-24 -30,-16 -26,4 Z" fill="url(#visor-grad)" />
-        <path d="M-26,4 C-10,18 10,18 26,4 C30,-16 20,-24 0,-26 C-20,-24 -30,-16 -26,4 Z" fill="none" stroke="#222" stroke-width="2" />
-        
-        <!-- Visor Glint (Sharp diagonal light sweep) -->
-        <path d="M-22,-15 Q0,-8 22,-15 Q15,0 0,5 Q-15,0 -22,-15 Z" fill="#FFF" opacity="0.35" />
-        <path d="M-5,-24 L10,-24 L5,-10 L-10,-10 Z" fill="#FFF" opacity="0.1" transform="skewX(-20)" />
+        <!-- Classic Spidey Eyes -->
+        <!-- Left Eye (Viewer's left) -->
+        <path d="M -4,2 Q -15,-5 -28,-10 Q -32,10 -15,18 Q -5,12 -4,2 Z" fill="#111" />
+        <path d="M -6,3 Q -15,-2 -25,-6 Q -28,8 -15,14 Q -7,10 -6,3 Z" fill="#FFFFFF" />
 
-        <!-- Visor Side Hinges -->
-        <circle cx="-28" cy="-5" r="4" fill="#111" />
-        <circle cx="-28" cy="-5" r="2" fill="#555" />
-        <circle cx="28" cy="-5" r="4" fill="#111" />
-        <circle cx="28" cy="-5" r="2" fill="#555" />
-        
-        <!-- Aerodynamic Chin Guard (Grey/Black) -->
-        <path d="M-24,15 C-10,38 10,38 24,15 C10,25 -10,25 -24,15 Z" fill="#444" />
-        <path d="M-22,18 C-10,35 10,35 22,18 C10,28 -10,28 -22,18 Z" fill="#111" opacity="0.6" /> <!-- Chin shadow -->
-        
-        <!-- Mouthpiece Air Vents -->
-        <rect x="-8" y="22" width="4" height="6" fill="#111" rx="1" transform="rotate(15 -8 22)" />
-        <rect x="0" y="23" width="4" height="6" fill="#111" rx="1" />
-        <rect x="8" y="22" width="4" height="6" fill="#111" rx="1" transform="rotate(-15 8 22)" />
+        <!-- Right Eye (Viewer's right) -->
+        <path d="M 4,2 Q 15,-5 28,-10 Q 32,10 15,18 Q 5,12 4,2 Z" fill="#111" />
+        <path d="M 6,3 Q 15,-2 25,-6 Q 28,8 15,14 Q 7,10 6,3 Z" fill="#FFFFFF" />
       </g>
       
       <!-- 3D TROPHY -->

@@ -46,8 +46,8 @@
     </radialGradient>
 
     <style>
-      .car { animation: drive 12s cubic-bezier(0.4, 0.0, 0.2, 1) infinite; }
-      .wheel { animation: spin 0.8s linear infinite; transform-origin: 0 0; }
+      .car { animation: drive 3.5s linear infinite; }
+      .wheel { animation: spin 0.3s linear infinite; transform-origin: 0 0; }
       
       @keyframes drive {
         0% { transform: translateX(-300px); }
@@ -82,12 +82,15 @@
     <!-- Intake shadow (depth) -->
     <path d="M 40 85 L 50 75 L 55 85 Z" fill="#000" />
     
-    <!-- DRIVER HELMET (Metallic 3D) -->
-    <!-- Driver sits back in cockpit -->
-    <circle cx="102" cy="85" r="10" fill="url(#helmet-metallic)" />
-    <!-- Visor -->
-    <path d="M98,80 C110,80 112,85 110,90 L98,85 Z" fill="#000" />
-    <path d="M100,81 C105,81 108,83 108,85 L100,83 Z" fill="#FFF" opacity="0.4" />
+    <!-- SPIDER-MAN HEAD IN COCKPIT -->
+    <circle cx="102" cy="85" r="10" fill="url(#red-grad)" />
+    <!-- Web Pattern (subtle) -->
+    <path d="M 102 75 L 102 95 M 92 85 L 112 85 M 95 78 L 109 92 M 95 92 L 109 78" stroke="#330000" stroke-width="0.5" opacity="0.6" />
+    <circle cx="102" cy="85" r="5" fill="none" stroke="#330000" stroke-width="0.5" opacity="0.6" />
+    
+    <!-- Spidey Eye looking right -->
+    <path d="M 103 82 Q 112 81 110 88 Q 106 90 103 88 Z" fill="#111" />
+    <path d="M 104 83 Q 110 82 109 87 Q 106 88 104 87 Z" fill="#FFF" />
     
     <!-- CHASSIS (Smooth Curves) -->
     <path d="M 15 110 L 150 110 Q 180 115 210 120 L 210 135 L 15 135 Z" fill="url(#body-grad)" />
