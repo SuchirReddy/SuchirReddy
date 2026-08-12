@@ -23,43 +23,43 @@
       
       .tech {
         opacity: 0;
-        animation: tech-reveal 8s infinite;
+        animation: tech-reveal 12s infinite;
       }
       
-      .col1-anim { animation: light1 8s infinite; opacity: 0; }
-      .col2-anim { animation: light2 8s infinite; opacity: 0; }
-      .col3-anim { animation: light3 8s infinite; opacity: 0; }
-      .col4-anim { animation: light4 8s infinite; opacity: 0; }
-      .col5-anim { animation: light5 8s infinite; opacity: 0; }
+      .col1-anim { animation: light1 12s infinite; opacity: 0; }
+      .col2-anim { animation: light2 12s infinite; opacity: 0; }
+      .col3-anim { animation: light3 12s infinite; opacity: 0; }
+      .col4-anim { animation: light4 12s infinite; opacity: 0; }
+      .col5-anim { animation: light5 12s infinite; opacity: 0; }
 
       @keyframes light1 {
-        0%, 12.4% { opacity: 0; }
-        12.5%, 74.9% { opacity: 1; }
-        75%, 100% { opacity: 0; }
+        0%, 3.9% { opacity: 0; }
+        4%, 23.9% { opacity: 1; }
+        24%, 100% { opacity: 0; }
       }
       @keyframes light2 {
-        0%, 24.9% { opacity: 0; }
-        25%, 74.9% { opacity: 1; }
-        75%, 100% { opacity: 0; }
+        0%, 7.9% { opacity: 0; }
+        8%, 23.9% { opacity: 1; }
+        24%, 100% { opacity: 0; }
       }
       @keyframes light3 {
-        0%, 37.4% { opacity: 0; }
-        37.5%, 74.9% { opacity: 1; }
-        75%, 100% { opacity: 0; }
+        0%, 11.9% { opacity: 0; }
+        12%, 23.9% { opacity: 1; }
+        24%, 100% { opacity: 0; }
       }
       @keyframes light4 {
-        0%, 49.9% { opacity: 0; }
-        50%, 74.9% { opacity: 1; }
-        75%, 100% { opacity: 0; }
+        0%, 15.9% { opacity: 0; }
+        16%, 23.9% { opacity: 1; }
+        24%, 100% { opacity: 0; }
       }
       @keyframes light5 {
-        0%, 62.4% { opacity: 0; }
-        62.5%, 74.9% { opacity: 1; }
-        75%, 100% { opacity: 0; }
+        0%, 19.9% { opacity: 0; }
+        20%, 23.9% { opacity: 1; }
+        24%, 100% { opacity: 0; }
       }
       @keyframes tech-reveal {
-        0%, 74.9% { opacity: 0; }
-        75%, 98% { opacity: 1; }
+        0%, 23.9% { opacity: 0; }
+        24%, 96% { opacity: 1; }
         100% { opacity: 0; }
       }
     </style>

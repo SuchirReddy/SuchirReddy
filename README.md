@@ -8,7 +8,11 @@
   </div>
   <br/>
 
-  <!-- 🚦 F1 Start Lights (Tech Stack) -->
+  <!-- 🚦 Tech Stack Header -->
+  <img src="./stack-header.svg" alt="Tech Stack Header" width="98%" />
+  <br/><br/>
+  
+  <!-- 🚦 F1 Start Lights (Tech Stack Matrix) -->
   <img src="./f1-start-lights.svg" alt="F1 Starting Lights Tech Stack" width="100%" />
   
   <br/><br/>
