@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="100%" height="400">
+  <defs>
+    <!-- 3D Gradients -->
+    
+    <!-- Helmet Gradient (Grey) -->
+    <radialGradient id="helmet-grad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#E0E0E0" />
+      <stop offset="50%" stop-color="#888888" />
+      <stop offset="90%" stop-color="#444444" />
+      <stop offset="100%" stop-color="#222222" />
+    </radialGradient>
+    
+    <!-- Visor Gradient -->
+    <linearGradient id="visor-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#555" />
+      <stop offset="30%" stop-color="#111" />
+      <stop offset="70%" stop-color="#222" />
+      <stop offset="100%" stop-color="#000" />
+    </linearGradient>
+
+    <!-- Premium Iridescent Visor Gradient -->
+    <linearGradient id="iridescent-visor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1493" /> 
+      <stop offset="25%" stop-color="#9400D3" /> 
+      <stop offset="65%" stop-color="#FFD700" /> 
+      <stop offset="100%" stop-color="#FF8C00" /> 
+    </linearGradient>
+
+    <!-- Torso Navy Cylinder Gradient -->
+    <linearGradient id="navy-cyl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050817" />
+      <stop offset="25%" stop-color="#1A2863" />
+      <stop offset="60%" stop-color="#0A102E" />
+      <stop offset="90%" stop-color="#030510" />
+    </linearGradient>
+    
+    <!-- Red Cylinder Gradient -->
+    <linearGradient id="red-cyl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A0010" />
+      <stop offset="30%" stop-color="#FF334B" />
+      <stop offset="70%" stop-color="#E2001A" />
+      <stop offset="100%" stop-color="#66000B" />
+    </linearGradient>
+
+    <!-- Gold Cylinder Gradient -->
+    <linearGradient id="gold-cyl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A67B00" />
+      <stop offset="20%" stop-color="#FFDF66" />
+      <stop offset="50%" stop-color="#FFD700" />
+      <stop offset="80%" stop-color="#CC9900" />
+      <stop offset="100%" stop-color="#664D00" />
+    </linearGradient>
+
+    <!-- Dark Platform Gradient -->
+    <linearGradient id="dark-face" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#333" />
+      <stop offset="50%" stop-color="#1A1A1A" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+    
+    <!-- Spotlight -->
+    <radialGradient id="spotlight" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.15)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </radialGradient>
+
+    <style>
+      .confetti { animation: fall linear infinite; }
+      @keyframes fall {
+        0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(420px) rotate(720deg); opacity: 0; }
+      }
+      .driver {
+        animation: breathe 4s ease-in-out infinite;
+        transform-origin: 150px 310px;
+      }
+      @keyframes breathe {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(1.02); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Spotlight -->
+  <rect x="0" y="0" width="300" height="400" fill="url(#spotlight)" />
+
+  <!-- Confetti Background -->
+  <g>
+    <rect x="20" y="-20" width="6" height="12" fill="#E2001A" class="confetti" style="animation-duration: 3s; animation-delay: 0s;" />
+    <rect x="50" y="-20" width="8" height="8" fill="#FFC220" class="confetti" style="animation-duration: 4s; animation-delay: 1.5s;" />
+    <circle cx="80" cy="-20" r="4" fill="#00BFFF" class="confetti" style="animation-duration: 3.5s; animation-delay: 0.2s;" />
+    <rect x="120" y="-20" width="10" height="6" fill="#E2001A" class="confetti" style="animation-duration: 2.8s; animation-delay: 2s;" />
+    <rect x="160" y="-20" width="7" height="10" fill="#FFF" class="confetti" style="animation-duration: 4.2s; animation-delay: 0.5s;" />
+    <circle cx="200" cy="-20" r="5" fill="#FFC220" class="confetti" style="animation-duration: 3.2s; animation-delay: 1s;" />
+    <rect x="240" y="-20" width="6" height="6" fill="#E2001A" class="confetti" style="animation-duration: 3.8s; animation-delay: 0.8s;" />
+    <rect x="280" y="-20" width="8" height="12" fill="#00BFFF" class="confetti" style="animation-duration: 3.1s; animation-delay: 2.5s;" />
+    <circle cx="30" cy="-20" r="3" fill="#FFF" class="confetti" style="animation-duration: 4.5s; animation-delay: 1.2s;" />
+    <rect x="90" y="-20" width="12" height="5" fill="#E2001A" class="confetti" style="animation-duration: 2.5s; animation-delay: 0.7s;" />
+    <rect x="140" y="-20" width="6" height="6" fill="#FFC220" class="confetti" style="animation-duration: 3.9s; animation-delay: 1.8s;" />
+    <circle cx="180" cy="-20" r="6" fill="#E2001A" class="confetti" style="animation-duration: 3.3s; animation-delay: 2.2s;" />
+    <rect x="220" y="-20" width="5" height="10" fill="#00BFFF" class="confetti" style="animation-duration: 4.1s; animation-delay: 0.3s;" />
+    <circle cx="260" cy="-20" r="4" fill="#FFF" class="confetti" style="animation-duration: 2.9s; animation-delay: 1.1s;" />
+  </g>
+
+  <!-- Podium Step (3D Box with Top and Front faces) -->
+  <g transform="translate(0, 0)">
+    <!-- Top Face (lighter for perspective) -->
+    <polygon points="60,330 240,330 200,300 100,300" fill="#444" />
+    <polygon points="100,300 200,300 195,295 105,295" fill="#555" />
+    <!-- Front Face (darker gradient) -->
+    <polygon points="60,330 240,330 240,395 60,395" fill="url(#dark-face)" />
+    <!-- Number 1 with 3D drop shadow -->
+    <text x="148" y="380" font-family="Arial Black, Impact, sans-serif" font-size="60" font-weight="900" fill="#B38600" text-anchor="middle">1</text>
+    <text x="150" y="378" font-family="Arial Black, Impact, sans-serif" font-size="60" font-weight="900" fill="#FFC220" text-anchor="middle">1</text>
+    <!-- Floor line -->
+    <line x1="0" y1="395" x2="300" y2="395" stroke="#E2001A" stroke-width="6" />
+    <polygon points="0,398 300,398 300,400 0,400" fill="#8A0010" />
+  </g>
+
+  <!-- 3D Driver Group -->
+  <g class="driver">
+    <g transform="translate(150, 310)">
+      
+      <!-- 3D Legs (Cylinders) -->
+      <!-- Left leg -->
+      <rect x="-24" y="-70" width="22" height="70" fill="url(#navy-cyl)" rx="6" />
+      <rect x="-20" y="-70" width="5" height="70" fill="url(#red-cyl)" />
+      <!-- Right leg -->
+      <rect x="2" y="-70" width="22" height="70" fill="url(#navy-cyl)" rx="6" />
+      <rect x="15" y="-70" width="5" height="70" fill="url(#red-cyl)" />
+      
+      <!-- 3D Shoes -->
+      <!-- Outer shadow for depth -->
+      <ellipse cx="-13" cy="2" rx="14" ry="7" fill="#000" />
+      <ellipse cx="-13" cy="0" rx="14" ry="7" fill="#111" />
+      
+      <ellipse cx="13" cy="2" rx="14" ry="7" fill="#000" />
+      <ellipse cx="13" cy="0" rx="14" ry="7" fill="#111" />
+
+      <!-- 3D Torso -->
+      <!-- Torso with rounded edges for volume -->
+      <rect x="-30" y="-140" width="60" height="80" fill="url(#navy-cyl)" rx="15" />
+      
+      <!-- Torso Accents (curved to simulate chest volume) -->
+      <path d="M-20,-130 Q0,-120 20,-130 L15,-80 Q0,-75 -15,-80 Z" fill="#FFC220" opacity="0.9" />
+      <path d="M-12,-120 Q0,-110 12,-120 L8,-90 Q0,-85 -8,-90 Z" fill="url(#red-cyl)" />
+      
+      <!-- 3D Belt -->
+      <rect x="-31" y="-75" width="62" height="12" fill="#111" rx="4" />
+      <!-- Belt shadow -->
+      <rect x="-31" y="-70" width="62" height="7" fill="#000" opacity="0.5" rx="2" />
+      <!-- Buckle -->
+      <rect x="-10" y="-78" width="20" height="18" fill="#CCC" rx="3" />
+      <rect x="-8" y="-76" width="16" height="14" fill="#888" rx="2" />
+
+      <!-- LEFT ARM (Resting) -->
+      <!-- Shoulder sphere -->
+      <circle cx="-30" cy="-130" r="14" fill="url(#navy-cyl)" />
+      <!-- Upper arm -->
+      <path d="M-40,-130 L-50,-90 L-35,-90 L-25,-130 Z" fill="url(#navy-cyl)" />
+      <!-- Lower arm -->
+      <path d="M-50,-90 L-35,-60 L-25,-65 L-35,-90 Z" fill="url(#navy-cyl)" />
+      <!-- Glove -->
+      <circle cx="-30" cy="-62" r="10" fill="#111" />
+      <circle cx="-32" cy="-64" r="5" fill="#333" /> <!-- glove highlight -->
+      
+      <!-- RIGHT ARM (Raised) -->
+      <!-- Shoulder sphere -->
+      <circle cx="30" cy="-130" r="14" fill="url(#navy-cyl)" />
+      <!-- Arm extending up -->
+      <path d="M22,-130 L40,-130 L65,-180 L45,-190 Z" fill="url(#navy-cyl)" />
+      <!-- Sleeve accent -->
+      <path d="M30,-140 L45,-140 L60,-170 L45,-175 Z" fill="url(#red-cyl)" />
+      <!-- Glove -->
+      <circle cx="55" cy="-185" r="10" fill="#111" />
+      <circle cx="53" cy="-187" r="5" fill="#333" /> <!-- glove highlight -->
+
+      <!-- Thick Neck / HANS padding -->
+      <path d="M-20,-140 C-25,-160 25,-160 20,-140 Z" fill="#111" />
+
+      <!-- 3D HELMET (Premium Grey) -->
+      <g transform="translate(0, -165)">
+        <!-- Aerodynamic Top Spoiler -->
+        <path d="M-15,-28 C0,-35 15,-28 10,-10 C0,-15 -10,-15 -15,-28 Z" fill="rgba(255,255,255,0.2)" />
+        
+        <!-- Helmet Sphere -->
+        <circle cx="0" cy="0" r="32" fill="url(#helmet-grad)" />
+        <ellipse cx="0" cy="0" rx="30" ry="32" fill="none" stroke="#666" stroke-width="1" opacity="0.5" /> <!-- Contour -->
+        
+        <!-- Premium Black/Grey Visor -->
+        <path d="M-26,4 C-10,18 10,18 26,4 C30,-16 20,-24 0,-26 C-20,-24 -30,-16 -26,4 Z" fill="url(#visor-grad)" />
+        <path d="M-26,4 C-10,18 10,18 26,4 C30,-16 20,-24 0,-26 C-20,-24 -30,-16 -26,4 Z" fill="none" stroke="#222" stroke-width="2" />
+        
+        <!-- Visor Glint (Sharp diagonal light sweep) -->
+        <path d="M-22,-15 Q0,-8 22,-15 Q15,0 0,5 Q-15,0 -22,-15 Z" fill="#FFF" opacity="0.35" />
+        <path d="M-5,-24 L10,-24 L5,-10 L-10,-10 Z" fill="#FFF" opacity="0.1" transform="skewX(-20)" />
+
+        <!-- Visor Side Hinges -->
+        <circle cx="-28" cy="-5" r="4" fill="#111" />
+        <circle cx="-28" cy="-5" r="2" fill="#555" />
+        <circle cx="28" cy="-5" r="4" fill="#111" />
+        <circle cx="28" cy="-5" r="2" fill="#555" />
+        
+        <!-- Aerodynamic Chin Guard (Grey/Black) -->
+        <path d="M-24,15 C-10,38 10,38 24,15 C10,25 -10,25 -24,15 Z" fill="#444" />
+        <path d="M-22,18 C-10,35 10,35 22,18 C10,28 -10,28 -22,18 Z" fill="#111" opacity="0.6" /> <!-- Chin shadow -->
+        
+        <!-- Mouthpiece Air Vents -->
+        <rect x="-8" y="22" width="4" height="6" fill="#111" rx="1" transform="rotate(15 -8 22)" />
+        <rect x="0" y="23" width="4" height="6" fill="#111" rx="1" />
+        <rect x="8" y="22" width="4" height="6" fill="#111" rx="1" transform="rotate(-15 8 22)" />
+      </g>
+      
+      <!-- 3D TROPHY -->
+      <g transform="translate(55, -205)">
+        <!-- Base Shadow -->
+        <rect x="-12" y="17" width="24" height="8" fill="#000" rx="2" />
+        <!-- Base -->
+        <rect x="-12" y="15" width="24" height="6" fill="#111" rx="2" />
+        <rect x="-8" y="5" width="16" height="10" fill="#CCC" />
+        <!-- Base neck -->
+        <path d="M-5,5 L5,5 L8,-5 L-8,-5 Z" fill="#999" />
+        
+        <!-- Cup Body -->
+        <path d="M-18,-15 C-18,-5 -10,5 0,5 C10,5 18,-5 18,-15 Z" fill="url(#gold-cyl)" />
+        
+        <!-- Top Ellipse (creates hollow 3D cup look) -->
+        <ellipse cx="0" cy="-15" rx="18" ry="6" fill="#FFEC8B" />
+        <ellipse cx="0" cy="-15" rx="15" ry="4" fill="#A67B00" /> <!-- Inner shadow -->
+        
+        <!-- 3D Handles -->
+        <path d="M-16,-10 C-38,-15 -28,10 -5,2" fill="none" stroke="url(#gold-cyl)" stroke-width="4" stroke-linecap="round" />
+        <path d="M16,-10 C38,-15 28,10 5,2" fill="none" stroke="url(#gold-cyl)" stroke-width="4" stroke-linecap="round" />
+      </g>
+
+    </g>
+  </g>
+</svg>
