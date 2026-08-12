@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="100%">
+  <defs>
     <!-- Titanium Gradient for Name -->
     <linearGradient id="titanium" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
