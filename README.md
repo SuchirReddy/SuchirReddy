@@ -1,16 +1,10 @@
 <div align="center">  
 
-  <!-- Driver Intro & Podium Section -->
-  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
-    <tr>
-      <td width="50%" align="center" valign="middle" style="padding: 10px;">
-        <img src="./about-me.svg" alt="About Me Card" width="100%" />
-      </td>
-      <td width="50%" align="center" valign="middle">
-        <img src="./driver-podium.svg" alt="Standing Driver on Podium" width="350" />
-      </td>
-    </tr>
-  </table>
+  <!-- Driver Intro & Podium Section (Borderless Side-by-Side) -->
+  <div align="center">
+    <img src="./about-me.svg" alt="About Suchir" width="58%" />
+    <img src="./driver-podium.svg" alt="F1 Driver Podium" width="38%" />
+  </div>
   <br/>
 
   <!-- 🚦 F1 Start Lights (Tech Stack) -->
