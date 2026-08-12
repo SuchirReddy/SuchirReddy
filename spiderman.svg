@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="120" height="240">
+  <defs>
+    <!-- Web Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Premium Suit Gradients -->
+    <linearGradient id="red-suit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#BA0000" />
+    </linearGradient>
+    <linearGradient id="blue-suit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A84FF" />
+      <stop offset="100%" stop-color="#003D82" />
+    </linearGradient>
+    
+    <style>
+      .swing {
+        transform-origin: 50% 0%;
+        animation: pendulum 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+      }
+      @keyframes pendulum {
+        0% { transform: rotate(10deg); }
+        50% { transform: rotate(-10deg); }
+        100% { transform: rotate(10deg); }
+      }
+    </style>
+  </defs>
+
+  <g class="swing">
+    <!-- The Glowing Web Line (Attaches to the waist/crossed feet) -->
+    <line x1="100" y1="0" x2="100" y2="180" stroke="#FFFFFF" stroke-width="2" filter="url(#glow)" opacity="0.6"/>
+    <line x1="100" y1="0" x2="100" y2="180" stroke="#FFFFFF" stroke-width="1.5" />
+
+    <!-- Torso (Upside down, waist at 180, shoulders at 245) -->
+    <path d="M 80,180 L 120,180 L 130,245 L 70,245 Z" fill="url(#blue-suit)" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+    
+    <!-- Red Chest/Back center section -->
+    <path d="M 90,180 L 110,180 L 115,245 L 85,245 Z" fill="url(#red-suit)" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/>
+    
+    <!-- Web Pattern on Red Chest -->
+    <line x1="88" y1="200" x2="112" y2="200" stroke="#111" stroke-width="1" opacity="0.4"/>
+    <line x1="86" y1="220" x2="114" y2="220" stroke="#111" stroke-width="1" opacity="0.4"/>
+    <line x1="100" y1="180" x2="100" y2="245" stroke="#111" stroke-width="1" opacity="0.4"/>
+
+    <!-- Spider Emblem on Chest (Upside down) -->
+    <circle cx="100" cy="225" r="4" fill="#111" />
+    <path d="M 93,218 L 100,225 L 107,218 M 92,232 L 100,225 L 108,232" fill="none" stroke="#111" stroke-width="1.5" />
+
+    <!-- Arms (Folded across chest) -->
+    <!-- Left Arm -->
+    <path d="M 70,240 Q 55,250 100,210" fill="none" stroke="url(#red-suit)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 70,240 Q 55,250 100,210" fill="none" stroke="#111" stroke-width="17" stroke-linecap="round" opacity="0.1"/>
+    
+    <!-- Right Arm (Crosses over left) -->
+    <path d="M 130,240 Q 145,250 90,220" fill="none" stroke="url(#red-suit)" stroke-width="14" stroke-linecap="round"/>
+    
+    <!-- Lotus Legs (Crossed at waist) -->
+    <!-- Left Leg (Behind Right) -->
+    <!-- Thigh -->
+    <path d="M 80,180 L 50,150" fill="none" stroke="url(#blue-suit)" stroke-width="20" stroke-linecap="round"/>
+    <!-- Calf crossing inward -->
+    <path d="M 50,150 L 105,185" fill="none" stroke="url(#blue-suit)" stroke-width="16" stroke-linecap="round"/>
+    <!-- Red Boot Left -->
+    <path d="M 90,175 L 115,195" fill="none" stroke="url(#red-suit)" stroke-width="16" stroke-linecap="round"/>
+    
+    <!-- Right Leg (In front) -->
+    <!-- Thigh -->
+    <path d="M 120,180 L 150,150" fill="none" stroke="url(#blue-suit)" stroke-width="20" stroke-linecap="round"/>
+    <!-- Calf crossing inward -->
+    <path d="M 150,150 L 85,195" fill="none" stroke="url(#blue-suit)" stroke-width="16" stroke-linecap="round"/>
+    <!-- Red Boot Right -->
+    <path d="M 110,180 L 75,200" fill="none" stroke="url(#red-suit)" stroke-width="16" stroke-linecap="round"/>
+
+    <!-- Outline overlay to separate limbs (Subtle shadow/stroke) -->
+    <path d="M 150,150 L 85,195" fill="none" stroke="#111" stroke-width="18" stroke-linecap="round" opacity="0.1"/>
+
+    <!-- Proportional Head (Not oversized) -->
+    <!-- Center of head is (100, 280). rx=32, ry=40 -->
+    <ellipse cx="100" cy="280" rx="32" ry="40" fill="url(#red-suit)" stroke="#111" stroke-width="3" />
+    
+    <!-- Detailed Mask Web Pattern (More precise) -->
+    <g stroke="#600000" stroke-width="1.2" opacity="0.6">
+      <path d="M 100,240 L 100,320" /> <!-- Center vertical -->
+      <path d="M 100,280 Q 70,300 70,315" />
+      <path d="M 100,280 Q 130,300 130,315" />
+      <path d="M 100,280 Q 60,270 68,245" />
+      <path d="M 100,280 Q 140,270 132,245" />
+      <path d="M 100,280 L 68,280" />
+      <path d="M 100,280 L 132,280" />
+      
+      <!-- Concentric Webs -->
+      <ellipse cx="100" cy="280" rx="10" ry="12" fill="none" />
+      <ellipse cx="100" cy="280" rx="20" ry="24" fill="none" />
+      <ellipse cx="100" cy="280" rx="30" ry="36" fill="none" />
+    </g>
+
+    <!-- Classic Matching Spider-Man Eyes -->
+    <!-- Left Eye (Viewer's left) -->
+    <!-- Black rim -->
+    <path d="M 96,260 Q 65,255 70,300 Q 80,310 96,290 Z" fill="#111" />
+    <!-- White Lens -->
+    <path d="M 94,264 Q 71,262 74,295 Q 82,302 94,288 Z" fill="#FFFFFF" />
+
+    <!-- Right Eye (Viewer's right) -->
+    <!-- Black rim -->
+    <path d="M 104,260 Q 135,255 130,300 Q 120,310 104,290 Z" fill="#111" />
+    <!-- White Lens -->
+    <path d="M 106,264 Q 129,262 126,295 Q 118,302 106,288 Z" fill="#FFFFFF" />
+
+  </g>
+</svg>
