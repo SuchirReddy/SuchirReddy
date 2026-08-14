@@ -1,7 +1,7 @@
 <div align="center">  
   
   <!-- 🕸️ Hanging Spider-Man -->
-  <img src="./spiderman.svg?v=2" align="right" width="80" alt="Hanging Spider-Man" />
+  <img src="./spiderman.svg?v=2" align="right" width="160" alt="Hanging Spider-Man" />
   <!-- Driver Intro & Podium Section (Borderless Side-by-Side) -->
   <div align="center">
     <img src="./about-me.svg?v=2" alt="About Suchir" width="48%" /><img src="./driver-podium.svg?v=2" alt="F1 Driver Podium" width="28%" />
