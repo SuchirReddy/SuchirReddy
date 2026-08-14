@@ -21,10 +21,10 @@
   <div align="center">
     <img src="./connect-header.svg?v=2" alt="Connect Here Header" width="98%" />
     <br/><br/>
-    <a href="https://vyuhavarahi.in"><img src="./contact-agency.svg?v=2" alt="Agency" width="24%" /></a>
-    <a href="https://suchir.aveils.in"><img src="./contact-portfolio.svg?v=2" alt="Portfolio" width="24%" /></a>
-    <a href="https://linkedin.com/in/suchirreddy"><img src="./contact-linkedin.svg?v=2" alt="LinkedIn" width="24%" /></a>
-    <a href="mailto:workforsuchir@gmail.com"><img src="./contact-email.svg?v=2" alt="Email" width="24%" /></a>
+    <a href="https://vyuhavarahi.in" target="_blank" rel="noopener noreferrer"><img src="./contact-agency.svg?v=2" alt="Agency" width="24%" /></a>
+    <a href="https://suchir.aveils.in" target="_blank" rel="noopener noreferrer"><img src="./contact-portfolio.svg?v=2" alt="Portfolio" width="24%" /></a>
+    <a href="https://linkedin.com/in/suchirreddy" target="_blank" rel="noopener noreferrer"><img src="./contact-linkedin.svg?v=2" alt="LinkedIn" width="24%" /></a>
+    <a href="mailto:workforsuchir@gmail.com" target="_blank" rel="noopener noreferrer"><img src="./contact-email.svg?v=2" alt="Email" width="24%" /></a>
   </div>
   
   <br/>
