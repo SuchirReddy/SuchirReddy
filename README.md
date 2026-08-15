@@ -13,8 +13,8 @@
   <img src="./stack-header.svg?v=2" alt="Tech Stack Header" width="98%" />
   <br/><br/>
   
-  <!-- 🚦 F1 Start Lights (Tech Stack Matrix) -->
-  <img src="./f1-start-lights.svg?v=2" alt="F1 Starting Lights Tech Stack" width="100%" />
+  <!-- 🌆 City Skyline Billboards (Tech Stack) -->
+  <img src="./skyline-stack.svg?v=1" alt="City Skyline Tech Stack Billboards" width="100%" />
   
   <br/><br/>
 
@@ -29,6 +29,8 @@
     <a href="https://medicare.vyuhavarahi.in" target="_blank" rel="noopener noreferrer"><img src="./project-medicare.svg?v=1" alt="Medicare" width="32%" /></a>
     <a href="https://aura-ecommerce-one.vercel.app" target="_blank" rel="noopener noreferrer"><img src="./project-ecommerce.svg?v=1" alt="Aura Ecommerce" width="32%" /></a>
     <a href="https://urbioo.vercel.app" target="_blank" rel="noopener noreferrer"><img src="./project-urbioo.svg?v=1" alt="Urbioo" width="32%" /></a>
+    <br/><br/>
+    <img src="./project-secret.svg" alt="Top Secret: Private Commits" width="98%" />
   </div>
   
   <br/><br/>
