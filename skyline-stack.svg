@@ -110,6 +110,31 @@
   <rect x="0" y="0" width="900" height="300" fill="#000015" />
   <rect x="0" y="0" width="900" height="300" fill="url(#halftone)" />
   
+  <!-- Moon and Clouds -->
+  <!-- Clouds Base -->
+  <g fill="#0A0A2A" stroke="#111" stroke-width="2">
+    <path d="M 120,110 A 25,25 0 0,1 150,85 A 35,35 0 0,1 210,85 A 25,25 0 0,1 240,110 Z" />
+    <path d="M 620,140 A 35,35 0 0,1 665,100 A 50,50 0 0,1 755,100 A 35,35 0 0,1 800,140 Z" />
+    <path d="M 380,90 A 20,20 0 0,1 405,70 A 25,25 0 0,1 455,70 A 20,20 0 0,1 480,90 Z" />
+    <path d="M -20,130 A 30,30 0 0,1 20,95 A 40,40 0 0,1 90,95 A 30,30 0 0,1 130,130 Z" />
+    <path d="M 820,110 A 25,25 0 0,1 850,85 A 35,35 0 0,1 910,85 A 25,25 0 0,1 940,110 Z" />
+  </g>
+  <!-- Clouds Halftone Overlay -->
+  <g fill="url(#halftone)" opacity="0.3">
+    <path d="M 120,110 A 25,25 0 0,1 150,85 A 35,35 0 0,1 210,85 A 25,25 0 0,1 240,110 Z" />
+    <path d="M 620,140 A 35,35 0 0,1 665,100 A 50,50 0 0,1 755,100 A 35,35 0 0,1 800,140 Z" />
+    <path d="M 380,90 A 20,20 0 0,1 405,70 A 25,25 0 0,1 455,70 A 20,20 0 0,1 480,90 Z" />
+    <path d="M -20,130 A 30,30 0 0,1 20,95 A 40,40 0 0,1 90,95 A 30,30 0 0,1 130,130 Z" />
+    <path d="M 820,110 A 25,25 0 0,1 850,85 A 35,35 0 0,1 910,85 A 25,25 0 0,1 940,110 Z" />
+  </g>
+
+  <!-- Comic Moon (Rendered last so it's in front and uncovered) -->
+  <g transform="translate(730, 80) rotate(-15)">
+    <!-- Comic Crescent Path -->
+    <path d="M 0,-35 A 35,35 0 1,1 0,35 A 20,35 0 0,0 0,-35 Z" fill="#FFF9C4" stroke="#111" stroke-width="3" stroke-linejoin="round" />
+    <path d="M 0,-35 A 35,35 0 1,1 0,35 A 20,35 0 0,0 0,-35 Z" fill="url(#halftone)" opacity="0.6" />
+  </g>
+  
   <!-- Parallax Skyline Layers -->
   <path d="M 0 300 L 0 186 L 40 186 L 40 106 L 60 106 L 60 169 L 88 169 L 88 183 L 115 183 L 115 187 L 158 187 L 158 106 L 199 106 L 199 131 L 247 131 L 247 125 L 269 125 L 269 196 L 302 196 L 302 189 L 322 189 L 322 171 L 348 171 L 348 123 L 384 123 L 384 129 L 404 129 L 404 109 L 430 109 L 430 111 L 470 111 L 470 147 L 507 147 L 507 143 L 534 143 L 534 165 L 572 165 L 572 89 L 617 89 L 617 103 L 637 103 L 637 180 L 682 180 L 682 146 L 724 146 L 724 165 L 754 165 L 754 173 L 778 173 L 778 103 L 828 103 L 828 187 L 858 187 L 858 152 L 880 152 L 880 155 L 900 155 L 900 300 Z" fill="#000033" opacity="0.6" stroke="#111" stroke-width="2" stroke-linejoin="round" />
 
