@@ -1,40 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 120" width="100%" height="120">
   <defs>
-    <linearGradient id="frame-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1A1A1A" />
-      <stop offset="100%" stop-color="#050505" />
-    </linearGradient>
-    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
-    </linearGradient>
-    <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.5" fill="#444444" opacity="0.5" />
-    </pattern>
-    <linearGradient id="fade-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#050505" stop-opacity="0.95" />
-      <stop offset="25%" stop-color="#050505" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#050505" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#050505" stop-opacity="0.85" />
-    </linearGradient>
-    <filter id="noise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
-    </filter>
     <style>
-      .label-font { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 11px; font-weight: 600; fill: #777777; text-transform: uppercase; letter-spacing: 1px; }
-      .data-font { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 13px; font-weight: 600; fill: #00FFFF; text-transform: uppercase; letter-spacing: 2px; }
+      .link { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 12px; font-weight: 700; fill: #FFFFFF; transition: fill 0.3s ease, transform 0.2s ease; transform-origin: center; }
+      svg:hover .link { fill: #00FFFF; transform: scale(1.05); }
+      .core { transition: all 0.3s ease; }
+      svg:hover .core { fill: #FFFFFF; filter: drop-shadow(0 0 8px #00FFFF); }
     </style>
   </defs>
-
-  <rect x="5" y="5" width="240" height="110" rx="12" fill="url(#frame-grad)" stroke="#333" stroke-width="1.5" />
-  <rect x="7" y="7" width="236" height="106" rx="10" fill="url(#dot-grid)" />
-  <rect x="7" y="7" width="236" height="106" rx="10" fill="url(#fade-grad)" />
-  <rect x="7" y="7" width="236" height="106" rx="10" fill="url(#glass)" />
-  <rect x="5" y="5" width="240" height="110" rx="12" filter="url(#noise)" opacity="0.04" />
   
-  <g transform="translate(125, 55)">
-    <text x="0" y="-5" text-anchor="middle" class="label-font">Direct Comms</text>
-    <text x="0" y="22" text-anchor="middle" class="data-font">workforsuchir@gmail.com</text>
-    <rect x="-15" y="38" width="30" height="3" fill="#00BFFF" />
+  <rect x="5" y="5" width="240" height="110" rx="12" fill="#0D1117" stroke="#333" stroke-width="1.5" />
+  
+  <!-- Arc Reactor -->
+  <g transform="translate(45, 60)">
+    <circle cx="0" cy="0" r="38" fill="#222" stroke="#444" stroke-width="2" />
+    <circle cx="0" cy="0" r="33" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.5" />
+    
+    <!-- Coils -->
+    <path d="M -33 -10 L -28 0 L -33 10 M 33 -10 L 28 0 L 33 10 M -10 -33 L 0 -28 L 10 -33 M -10 33 L 0 28 L 10 33" stroke="#00FFFF" stroke-width="2" fill="none" />
+    
+    <!-- Inner Rings -->
+    <circle cx="0" cy="0" r="23" fill="none" stroke="#444" stroke-width="3" />
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#00FFFF" stroke-width="2" stroke-dasharray="4 4" />
+    
+    <!-- Core -->
+    <circle cx="0" cy="0" r="9" fill="#00FFFF" class="core" />
+    <path d="M 0 -9 L 0 -14 M 0 9 L 0 14 M -9 0 L -14 0 M 9 0 L 14 0" stroke="#00FFFF" stroke-width="1" class="core" />
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(100, 55)">
+    <text x="0" y="-5" class="title">EMAIL</text>
+    <text x="0" y="22" class="link">workforsuchir@gmail.com</text>
   </g>
 </svg>

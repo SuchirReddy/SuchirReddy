@@ -1,40 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 120" width="100%" height="120">
   <defs>
-    <linearGradient id="frame-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1A1A1A" />
-      <stop offset="100%" stop-color="#050505" />
-    </linearGradient>
-    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
-    </linearGradient>
-    <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.5" fill="#444444" opacity="0.5" />
-    </pattern>
-    <linearGradient id="fade-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#050505" stop-opacity="0.95" />
-      <stop offset="25%" stop-color="#050505" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#050505" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#050505" stop-opacity="0.85" />
-    </linearGradient>
-    <filter id="noise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
-    </filter>
     <style>
-      .label-font { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 11px; font-weight: 600; fill: #777777; text-transform: uppercase; letter-spacing: 1px; }
-      .data-font { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 13px; font-weight: 600; fill: #A0C4FF; text-transform: uppercase; letter-spacing: 2px; }
+      .link { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; transition: fill 0.3s ease, transform 0.2s ease; transform-origin: center; }
+      svg:hover .link { fill: #A0C4FF; transform: scale(1.05); }
+      svg:hover .lightning { stroke: #FFFFFF; stroke-width: 2.5; filter: drop-shadow(0 0 5px #FFFFFF); }
+      .lightning { stroke: #A0C4FF; stroke-width: 1.5; fill: none; opacity: 0.8; transition: all 0.3s ease; }
     </style>
   </defs>
-
-  <rect x="5" y="5" width="240" height="110" rx="12" fill="url(#frame-grad)" stroke="#333" stroke-width="1.5" />
-  <rect x="7" y="7" width="236" height="106" rx="10" fill="url(#dot-grid)" />
-  <rect x="7" y="7" width="236" height="106" rx="10" fill="url(#fade-grad)" />
-  <rect x="7" y="7" width="236" height="106" rx="10" fill="url(#glass)" />
-  <rect x="5" y="5" width="240" height="110" rx="12" filter="url(#noise)" opacity="0.04" />
   
-  <g transform="translate(125, 55)">
-    <text x="0" y="-5" text-anchor="middle" class="label-font">Agency</text>
-    <text x="0" y="22" text-anchor="middle" class="data-font">vyuhavarahi.in</text>
-    <rect x="-15" y="38" width="30" height="3" fill="#00BFFF" />
+  <rect x="5" y="5" width="240" height="110" rx="12" fill="#0D1117" stroke="#333" stroke-width="1.5" />
+  
+  <!-- Lightning background -->
+  <path d="M 20 20 Q 30 50, 20 80 M 230 30 Q 210 60, 240 100 M 100 10 Q 120 40, 100 70 M 150 90 Q 170 60, 150 20" class="lightning" />
+  
+  <!-- Mjolnir -->
+  <g transform="translate(15, 20)">
+    <!-- Handle -->
+    <rect x="25" y="40" width="10" height="35" fill="#5C4033" stroke="#222" stroke-width="1" />
+    <path d="M 25 45 L 35 48 M 25 55 L 35 58 M 25 65 L 35 68" stroke="#3E2723" stroke-width="2" />
+    <!-- Strap -->
+    <path d="M 30 75 C 20 90, 40 90, 30 75" fill="none" stroke="#5C4033" stroke-width="2" />
+    
+    <!-- Hammer Head -->
+    <rect x="10" y="10" width="40" height="30" rx="2" fill="#9E9E9E" stroke="#424242" stroke-width="2" />
+    <polygon points="5,15 10,10 10,40 5,35" fill="#757575" stroke="#424242" stroke-width="1" />
+    <polygon points="55,15 50,10 50,40 55,35" fill="#757575" stroke="#424242" stroke-width="1" />
+    <rect x="15" y="15" width="30" height="20" fill="#BDBDBD" />
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(90, 55)">
+    <text x="0" y="-5" class="title">AGENCY</text>
+    <text x="0" y="22" class="link">vyuhavarahi.in</text>
   </g>
 </svg>
