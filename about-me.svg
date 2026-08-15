@@ -1,103 +1,106 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="100%">
   <defs>
-    <!-- Titanium Gradient for Name -->
-    <linearGradient id="titanium" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="40%" stop-color="#A0A0A0" />
-      <stop offset="60%" stop-color="#E0E0E0" />
-      <stop offset="100%" stop-color="#666666" />
-    </linearGradient>
-
-    <!-- Dot Grid Pattern -->
-    <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.5" fill="#444444" opacity="0.5" />
+    <!-- Comic Halftone Pattern -->
+    <pattern id="halftone" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <circle cx="3" cy="3" r="2" fill="#E23636" opacity="0.15" />
     </pattern>
-
-    <!-- Vignette Fade Gradient -->
-    <linearGradient id="fade-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#050505" stop-opacity="0.95" />
-      <stop offset="25%" stop-color="#050505" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#050505" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#050505" stop-opacity="0.85" />
-    </linearGradient>
-
-    <!-- Noise Filter -->
-    <filter id="noise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
-    </filter>
-
     <style>
-      /* Clean, stark minimalist typography */
-      .title { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 800; fill: url(#titanium); letter-spacing: -1px; }
-      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 500; fill: #888888; letter-spacing: -0.2px; }
-      .body-text { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: 400; fill: #A0A0A0; line-height: 1.6; }
-      .highlight { fill: #EAEAEA; font-weight: 600; }
-      .pill-text { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 500; fill: #CCCCCC; }
-      .pill-bg { fill: rgba(15,15,15,0.7); stroke: #333333; stroke-width: 1; }
+      .comic-title { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 44px; font-weight: 900; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+      .comic-title-shadow-cyan { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 44px; font-weight: 900; fill: #00FFFF; text-transform: uppercase; letter-spacing: 1px; }
+      .comic-title-shadow-red { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 44px; font-weight: 900; fill: #E23636; text-transform: uppercase; letter-spacing: 1px; }
+      
+      .body-text { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 16px; font-weight: 700; fill: #000000; line-height: 1.4; }
+      
+      .subtitle { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 26px; font-weight: 800; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 2px; }
+      .pill-text { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 13px; font-weight: 700; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+      
+      .panel-border { stroke: #FFFFFF; stroke-width: 4; stroke-linejoin: round; fill: url(#halftone); }
+      .box-border { stroke: #000000; stroke-width: 4; stroke-linejoin: miter; fill: #FFEB3B; }
+      
+      .pill-red { stroke: #000000; stroke-width: 3; stroke-linejoin: miter; fill: #E23636; }
+      .pill-blue { stroke: #000000; stroke-width: 3; stroke-linejoin: miter; fill: #0047BB; }
+      
+      .web-line { stroke: #FFFFFF; stroke-width: 2; opacity: 0.15; stroke-linecap: round; }
+      .spidey-eye { fill: none; stroke: #FFFFFF; stroke-width: 10; opacity: 0.08; stroke-linecap: round; stroke-linejoin: round; }
+      
+      .hover-scale { transition: transform 0.2s ease; transform-origin: center; cursor: default; }
+      .pill-group:hover .hover-scale { transform: scale(1.05); }
+      .pill-group:hover .pill-red { fill: #FF4B4B; }
+      .pill-group:hover .pill-blue { fill: #00BFFF; }
     </style>
   </defs>
 
-  <!-- Minimalist Black Card Base -->
-  <rect x="10" y="10" width="580" height="500" rx="14" fill="#050505" stroke="#222222" stroke-width="1.5" />
+  <!-- Background Base -->
+  <rect x="10" y="10" width="580" height="500" rx="14" fill="#050505" stroke="#222" stroke-width="2" />
   
-  <!-- Architectural Dot Grid -->
-  <rect x="11" y="11" width="578" height="498" rx="13" fill="url(#dot-grid)" />
+  <!-- Main Comic Panel Background (Jagged) -->
+  <polygon points="18,18 572,25 582,492 12,482" class="panel-border" />
   
-  <!-- Subtle Gradient Overlay (Vignette effect to fade grid near text) -->
-  <rect x="11" y="11" width="578" height="498" rx="13" fill="url(#fade-grad)" />
+  <!-- Giant Web Detail in Background -->
+  <g transform="translate(300, 260)">
+    <!-- Web radiating -->
+    <path d="M 0 0 L -300 -260 M 0 0 L 0 -260 M 0 0 L 300 -260 M 0 0 L -300 0 M 0 0 L 300 0 M 0 0 L -300 260 M 0 0 L 0 260 M 0 0 L 300 260" class="web-line" />
+    <path d="M -80 -80 Q 0 -50 80 -80 Q 50 0 80 80 Q 0 50 -80 80 Q -50 0 -80 -80 Z" class="web-line" fill="none" />
+    <path d="M -160 -160 Q 0 -110 160 -160 Q 110 0 160 160 Q 0 110 -160 160 Q -110 0 -160 -160 Z" class="web-line" fill="none" />
+    <path d="M -240 -240 Q 0 -170 240 -240 Q 170 0 240 240 Q 0 170 -240 240 Q -170 0 -240 -240 Z" class="web-line" fill="none" />
+  </g>
+
+  <!-- Giant Spidey Eye Outline (Subtle) -->
+  <path d="M 180 150 Q 380 30 520 230 Q 330 280 180 150 Z" class="spidey-eye" />
   
-  <!-- Matte Noise Texture -->
-  <rect x="10" y="10" width="580" height="500" rx="14" filter="url(#noise)" opacity="0.04" />
+  <!-- Title with Spider-Verse Glitch Effect -->
+  <g transform="translate(50, 100) rotate(-2)">
+    <!-- Glitch Shadows -->
+    <text x="4" y="4" class="comic-title-shadow-cyan">HEY, SUCHIR HERE.</text>
+    <text x="-4" y="-4" class="comic-title-shadow-red">HEY, SUCHIR HERE.</text>
+    <!-- Main Text -->
+    <text x="0" y="0" class="comic-title">HEY, SUCHIR HERE.</text>
+  </g>
   
-  <g transform="translate(50, 65)">
-    <!-- Title -->
-    <text x="0" y="40" class="title">Hey,Suchir Here.</text>
-    
-    <!-- Subtitle -->
-    <text x="0" y="80" class="subtitle"></text>
-    
-    <!-- Body Paragraph -->
-    <text x="0" y="140" class="body-text">
-      <tspan x="0" dy="0">I build high-impact software from the ground up.</tspan>
-      <tspan x="0" dy="38">Obsessed with performance and design, I specialize in</tspan>
-      <tspan x="0" dy="32">architecting scalable full-stack systems and crafting</tspan>
-      <tspan x="0" dy="32">intuitive digital experiences that solve real problems.</tspan>
+  <!-- Body Paragraph inside a Narrator Box -->
+  <g transform="translate(45, 145) rotate(-1)">
+    <!-- Drop Shadow -->
+    <polygon points="5,5 495,0 485,115 -5,120" fill="#E23636" opacity="0.6" />
+    <!-- Yellow Narrator Box -->
+    <polygon points="0,0 490,-5 480,110 -10,115" class="box-border" />
+    <text x="15" y="25" class="body-text">
+      <tspan x="15" dy="0">I build high-impact software from the ground up.</tspan>
+      <tspan x="15" dy="26">Obsessed with performance and design, I specialize in</tspan>
+      <tspan x="15" dy="26">architecting scalable full-stack systems and crafting</tspan>
+      <tspan x="15" dy="26">intuitive digital experiences that solve real problems.</tspan>
     </text>
+  </g>
 
-    <!-- Interests Section -->
-    <text x="0" y="290" class="subtitle">Core Focus</text>
+  <!-- Interests Section -->
+  <g transform="translate(50, 320)">
+    <!-- Header background block -->
+    <rect x="-10" y="-30" width="180" height="38" fill="#000000" transform="skewX(-15)" />
+    <text x="0" y="-2" class="subtitle">CORE FOCUS</text>
     
-    <!-- Professional Pills with Status Dots -->
-    <!-- Pill 1 -->
-    <g transform="translate(0, 315)">
-      <rect x="0" y="0" width="210" height="34" rx="6" class="pill-bg" />
-      <!-- Glowing Blue Dot -->
-      <circle cx="16" cy="17" r="4" fill="#00BFFF" />
-      <text x="32" y="22" class="pill-text">Full-Stack Architecture</text>
+    <!-- Professional Pills as Comic Panels -->
+    
+    <!-- Pill 1: Full-Stack Architecture -->
+    <g transform="translate(0, 35)" class="pill-group">
+      <polygon points="0,0 255,-5 250,35 -5,40" class="pill-red hover-scale" />
+      <text x="15" y="23" class="pill-text hover-scale">FULL-STACK ARCHITECTURE</text>
     </g>
     
-    <!-- Pill 2 -->
-    <g transform="translate(230, 315)">
-      <rect x="0" y="0" width="180" height="34" rx="6" class="pill-bg" />
-      <!-- Glowing Blue Dot -->
-      <circle cx="16" cy="17" r="4" fill="#00BFFF" />
-      <text x="32" y="22" class="pill-text">Startup Engineering</text>
+    <!-- Pill 2: Startup Engineering -->
+    <g transform="translate(270, 30)" class="pill-group">
+      <polygon points="0,0 220,-5 225,35 5,40" class="pill-blue hover-scale" />
+      <text x="15" y="22" class="pill-text hover-scale">STARTUP ENGINEERING</text>
     </g>
 
-    <!-- Pill 3 -->
-    <g transform="translate(0, 365)">
-      <rect x="0" y="0" width="160" height="34" rx="6" class="pill-bg" />
-      <!-- Glowing Blue Dot -->
-      <circle cx="16" cy="17" r="4" fill="#00BFFF" />
-      <text x="32" y="22" class="pill-text">Interface Design</text>
+    <!-- Pill 3: Interface Design -->
+    <g transform="translate(0, 95)" class="pill-group">
+      <polygon points="-5,-5 200,0 195,40 0,35" class="pill-blue hover-scale" />
+      <text x="15" y="22" class="pill-text hover-scale">INTERFACE DESIGN</text>
     </g>
     
-    <!-- Pill 4 -->
-    <g transform="translate(180, 365)">
-      <rect x="0" y="0" width="150" height="34" rx="6" class="pill-bg" />
-      <!-- Glowing Blue Dot -->
-      <circle cx="16" cy="17" r="4" fill="#00BFFF" />
-      <text x="32" y="22" class="pill-text">System Scaling</text>
+    <!-- Pill 4: System Scaling -->
+    <g transform="translate(215, 90)" class="pill-group">
+      <polygon points="0,-5 180,0 185,40 -5,35" class="pill-red hover-scale" />
+      <text x="15" y="22" class="pill-text hover-scale">SYSTEM SCALING</text>
     </g>
   </g>
 </svg>
