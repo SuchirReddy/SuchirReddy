@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 120" width="100%" height="120">
   <defs>
+    <pattern id="halftone" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <circle cx="2" cy="2" r="1" fill="#FFFFFF" opacity="0.05" />
+    </pattern>
     <style>
       .title { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 13px; font-weight: 600; fill: #A0C4FF; text-transform: uppercase; letter-spacing: 2px; }
       .link { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; transition: fill 0.3s ease, transform 0.2s ease; transform-origin: center; }
@@ -9,7 +12,12 @@
     </style>
   </defs>
   
-  <rect x="5" y="5" width="240" height="110" rx="12" fill="#0D1117" stroke="#333" stroke-width="1.5" />
+  <!-- Comic Shadow -->
+  <rect x="8" y="8" width="236" height="106" rx="6" fill="#000000" />
+  <!-- Panel -->
+  <rect x="3" y="3" width="236" height="106" rx="6" fill="#111111" stroke="#000000" stroke-width="3" />
+  <!-- Halftone Overlay -->
+  <rect x="3" y="3" width="236" height="106" rx="6" fill="url(#halftone)" pointer-events="none" />
   
   <!-- Lightning background -->
   <path d="M 20 20 Q 30 50, 20 80 M 230 30 Q 210 60, 240 100 M 100 10 Q 120 40, 100 70 M 150 90 Q 170 60, 150 20" class="lightning" />

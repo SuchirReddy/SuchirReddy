@@ -4,7 +4,7 @@
   <img src="./spiderman.svg?v=2" align="right" width="160" alt="Hanging Spider-Man" />
   <!-- Driver Intro & Podium Section (Borderless Side-by-Side) -->
   <div align="center">
-    <img src="./about-me.svg?v=2" alt="About Suchir" width="48%" /><img src="./driver-podium.svg?v=2" alt="F1 Driver Podium" width="28%" />
+    <img src="./about-me.svg?v=2" alt="About Suchir" width="48%" /><img src="./spiderman-podium.svg?v=2" alt="Spider-Man Podium" width="28%" />
   </div>
   <br/>
 
@@ -47,8 +47,8 @@
   
   <br/>
   
-  <!-- Animated F1 Car -->
-  <img src="./f1-car-animation.svg?v=2" alt="Animated Red Bull F1 Car" width="100%" />
+  <!-- Spider-Verse Glitch Logo Footer -->
+  <img src="./glitch-footer.svg?v=1" alt="Glitchy Spider-Verse Logo" width="100%" />
 </div>
 
 
