@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 110" width="100%" height="110">
+  <defs>
+    <linearGradient id="frame-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#444444" opacity="0.5" />
+    </pattern>
+    <linearGradient id="fade-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050505" stop-opacity="0.95" />
+      <stop offset="25%" stop-color="#050505" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#050505" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#050505" stop-opacity="0.85" />
+    </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <style>
+      .label-font { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 11px; font-weight: 600; fill: #777777; text-transform: uppercase; letter-spacing: 1px; }
+      .data-font { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; transition: fill 0.3s ease; }
+      .card-frame { transition: stroke 0.3s ease, stroke-width 0.3s ease; }
+      svg:hover .card-frame { stroke: #00D2BE; stroke-width: 2px; }
+      svg:hover .data-font { fill: #00D2BE; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="240" height="110" rx="12" fill="url(#frame-grad)" stroke="#333" stroke-width="1.5" class="card-frame" />
+  <rect x="2" y="2" width="236" height="106" rx="10" fill="url(#dot-grid)" />
+  <rect x="2" y="2" width="236" height="106" rx="10" fill="url(#fade-grad)" />
+  <rect x="2" y="2" width="236" height="106" rx="10" fill="url(#glass)" />
+  <rect x="0" y="0" width="240" height="110" rx="12" filter="url(#noise)" opacity="0.04" />
+  <text x="120" y="45" text-anchor="middle" class="label-font">CAFE VERONA</text>
+  <text x="120" y="70" text-anchor="middle" class="data-font">cafe-verona.app</text>
+  <rect x="105" y="85" width="30" height="3" fill="#00D2BE" />
+</svg>
