@@ -51,10 +51,10 @@
   
   <g transform="translate(50, 65)">
     <!-- Title -->
-    <text x="0" y="40" class="title">Suchir Reddy.</text>
+    <text x="0" y="40" class="title">Hey,Suchir Here.</text>
     
     <!-- Subtitle -->
-    <text x="0" y="80" class="subtitle">Builder &amp; Founder</text>
+    <text x="0" y="80" class="subtitle"></text>
     
     <!-- Body Paragraph -->
     <text x="0" y="140" class="body-text">
