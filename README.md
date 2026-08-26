@@ -8,7 +8,6 @@
   </div>
   <br/>
 
-
   <!-- 🚦 Tech Stack Header -->
   <img src="./stack-header.svg?v=2" alt="Tech Stack Header" width="98%" />
   <br/><br/>
@@ -47,6 +46,7 @@
   
   <br/>
   
+
   <!-- Spider-Verse Glitch Logo Footer -->
   <img src="./glitch-footer.svg?v=1" alt="Glitchy Spider-Verse Logo" width="100%" />
 </div>
