@@ -118,10 +118,10 @@
       <text x="15" y="23" class="pill-text hover-scale">FULL-STACK ARCHITECTURE</text>
     </g>
     
-    <!-- Pill 2: Startup Engineering -->
+    <!-- Pill 2: Product Engineering -->
     <g transform="translate(270, 30)" class="pill-group">
       <polygon points="0,0 220,-5 225,35 5,40" class="pill-blue hover-scale" />
-      <text x="15" y="22" class="pill-text hover-scale">STARTUP ENGINEERING</text>
+      <text x="15" y="22" class="pill-text hover-scale">PRODUCT ENGINEERING</text>
     </g>
 
     <!-- Pill 3: Interface Design -->
