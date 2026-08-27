@@ -5,6 +5,9 @@ on:
     - cron: '0 * * * *' # Runs every hour
   workflow_dispatch: # Allows manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   update-svg:
     runs-on: ubuntu-latest
