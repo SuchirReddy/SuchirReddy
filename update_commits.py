@@ -10,9 +10,35 @@ def get_stats(username):
     
     today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     
+    # 1. Fetch Today's Commits (Real-time via Search API)
+    # The GraphQL contributionCalendar is often heavily cached and delayed by hours.
+    # The search API provides up-to-the-minute accuracy.
+    todays_commits = 0
+    search_url = f"https://api.github.com/search/commits?q=author:{username}+committer-date:{today_str}"
+    headers = {
+        'Accept': 'application/vnd.github.cloak-preview',
+        'User-Agent': 'commit-counter-script'
+    }
+    
+    if pat_token:
+        # Pass the PAT token to search private repositories as well
+        headers['Authorization'] = f'token {pat_token}'
+        
+    try:
+        req = urllib.request.Request(search_url, headers=headers)
+        with urllib.request.urlopen(req) as response:
+            data = json.loads(response.read().decode())
+            todays_commits = data.get('total_count', 0)
+    except Exception as e:
+        print(f"Error fetching real-time today's commits: {e}")
+
+    # 2. Fetch Streak and Total Commits
+    streak = 0
+    total_commits = 0
+    
     if pat_token:
         # Use GraphQL API with PAT to get private commits
-        headers = {
+        gql_headers = {
             'Authorization': f'Bearer {pat_token}',
             'Content-Type': 'application/json'
         }
@@ -40,7 +66,7 @@ def get_stats(username):
         }
         
         try:
-            req = urllib.request.Request(graphql_url, data=json.dumps(payload).encode('utf-8'), headers=headers)
+            req = urllib.request.Request(graphql_url, data=json.dumps(payload).encode('utf-8'), headers=gql_headers)
             with urllib.request.urlopen(req) as response:
                 data = json.loads(response.read().decode())
                 calendar = data['data']['user']['contributionsCollection']['contributionCalendar']
@@ -51,26 +77,20 @@ def get_stats(username):
                 for week in calendar['weeks']:
                     days.extend(week['contributionDays'])
                 
-                # Get today's commits directly from the calendar
-                todays_commits = 0
-                for day in reversed(days):
-                    if day['date'] == today_str:
-                        todays_commits = day['contributionCount']
-                        break
-                
                 # Calculate streak
                 days.reverse()
-                streak = 0
+                current_streak = 0
                 for day in days:
                     count = day['contributionCount']
                     date = day['date']
                     if count > 0:
-                        streak += 1
+                        current_streak += 1
                     elif date == today_str:
                         continue
                     else:
                         break
                         
+                streak = current_streak
                 return todays_commits, streak, total_commits
         except Exception as e:
             print(f"Error fetching private stats with PAT: {e}")
