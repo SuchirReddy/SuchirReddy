@@ -17,6 +17,12 @@
   
   <br/><br/>
 
+  <!-- Spiderweb Counters Header -->
+  <div align="center">
+    <img src="./stats-header.svg?v=1" alt="GitHub Stats Header" width="98%" />
+  </div>
+  <br/>
+
   <!-- Spiderweb Counters -->
   <div align="center">
     <img src="./web-today.svg" alt="Today's Commits" width="20%" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./web-streak.svg" alt="Commit Streak" width="20%" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./web-total.svg" alt="Total Commits" width="20%" />
