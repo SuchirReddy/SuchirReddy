@@ -87,6 +87,8 @@ def get_stats(username):
                         current_streak += 1
                     elif date == today_str:
                         continue
+                    elif date > today_str:
+                        continue
                     else:
                         break
                         
@@ -123,9 +125,13 @@ def get_stats(username):
         if total_match:
             total_commits = int(total_match.group(1).replace(',', ''))
             
-        td_pattern = re.compile(r'<td[^>]*id="([^"]+)"[^>]*data-date="([^"]+)"')
-        tds = td_pattern.findall(html)
-        date_by_id = {tid: date for tid, date in tds}
+        td_tags = re.findall(r'<td[^>]*class="[^"]*ContributionCalendar-day[^"]*"[^>]*>', html)
+        date_by_id = {}
+        for td in td_tags:
+            id_m = re.search(r'id="([^"]+)"', td)
+            date_m = re.search(r'data-date="([^"]+)"', td)
+            if id_m and date_m:
+                date_by_id[id_m.group(1)] = date_m.group(1)
         
         tooltip_pattern = re.compile(r'<tool-tip[^>]*for="([^"]+)"[^>]*>([^<]+)</tool-tip>')
         tooltips = tooltip_pattern.findall(html)
@@ -146,6 +152,8 @@ def get_stats(username):
             if count > 0:
                 current_streak += 1
             elif date == today_str:
+                continue
+            elif date > today_str:
                 continue
             else:
                 break
