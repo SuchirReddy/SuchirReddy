@@ -29,68 +29,57 @@ def get_stats(username):
     except Exception as e:
         print(f"Error fetching today's commits: {e}")
 
-    # For Streak and Total, we use GraphQL if we have a token
+    # For Streak and Total, we scrape the public contributions graph
+    # This avoids GITHUB_TOKEN permission issues entirely
     streak = 0
     total_commits = 0
     
-    if token:
-        graphql_url = "https://api.github.com/graphql"
-        query = """
-        query($userName:String!) {
-          user(login: $userName){
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-                weeks {
-                  contributionDays {
-                    contributionCount
-                    date
-                  }
-                }
-              }
-            }
-          }
-        }
-        """
-        payload = {
-            "query": query,
-            "variables": {"userName": username}
-        }
-        
-        req = urllib.request.Request(graphql_url, data=json.dumps(payload).encode('utf-8'), headers=headers)
-        try:
-            with urllib.request.urlopen(req) as response:
-                data = json.loads(response.read().decode())
-                calendar = data['data']['user']['contributionsCollection']['contributionCalendar']
-                total_commits = calendar['totalContributions']
-                
-                # Calculate streak
-                weeks = calendar['weeks']
-                days = []
-                for week in weeks:
-                    days.extend(week['contributionDays'])
-                    
-                # Reverse days to iterate from today backwards
-                days.reverse()
-                
-                current_streak = 0
-                for day in days:
-                    count = day['contributionCount']
-                    date = day['date']
-                    
-                    if count > 0:
-                        current_streak += 1
-                    else:
-                        if date == today_str:
-                            continue
-                        else:
-                            break
-                            
-                streak = current_streak
-
-        except Exception as e:
-            print(f"Error fetching GraphQL stats: {e}")
+    try:
+        import re
+        url = f"https://github.com/users/{username}/contributions"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            html = response.read().decode('utf-8')
             
+        # 1. Parse total contributions
+        total_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s+contributions\s+in\s+the\s+last\s+year', html)
+        if total_match:
+            total_commits = int(total_match.group(1).replace(',', ''))
+            
+        # 2. Parse daily contributions for streak
+        td_pattern = re.compile(r'<td[^>]*id="([^"]+)"[^>]*data-date="([^"]+)"')
+        tds = td_pattern.findall(html)
+        date_by_id = {tid: date for tid, date in tds}
+        
+        tooltip_pattern = re.compile(r'<tool-tip[^>]*for="([^"]+)"[^>]*>([^<]+)</tool-tip>')
+        tooltips = tooltip_pattern.findall(html)
+        
+        contributions = {}
+        for tid, text in tooltips:
+            if tid in date_by_id:
+                count_match = re.search(r'^(\d+|No)\s+contribution', text.strip())
+                if count_match:
+                    count_str = count_match.group(1)
+                    count = 0 if count_str == 'No' else int(count_str)
+                    contributions[date_by_id[tid]] = count
+                    
+        # Calculate streak
+        sorted_dates = sorted(contributions.keys(), reverse=True)
+        current_streak = 0
+        for date in sorted_dates:
+            count = contributions[date]
+            if count > 0:
+                current_streak += 1
+            elif date == today_str:
+                continue # 0 commits today doesn't break yesterday's streak yet
+            else:
+                break
+                
+        streak = current_streak
+
+    except Exception as e:
+        print(f"Error scraping GitHub contributions: {e}")
+        
     return todays_commits, streak, total_commits
 
 def update_counter_svg(title, value, output_filename):
