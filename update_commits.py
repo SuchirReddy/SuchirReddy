@@ -5,35 +5,93 @@ import os
 from datetime import datetime, timezone
 
 def get_stats(username):
-    token = os.environ.get('GITHUB_TOKEN')
+    # To get private commits, the user MUST provide a Personal Access Token (PAT)
+    pat_token = os.environ.get('PAT_TOKEN')
     
-    # We will still get today's commits via the search API to be accurate to the minute 
-    # without relying on timezone offsets in the calendar
     today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-    search_url = f"https://api.github.com/search/commits?q=author:{username}+committer-date:{today_str}"
     
-    headers = {
-        'Accept': 'application/vnd.github.cloak-preview',
-        'User-Agent': 'commit-counter-script'
-    }
-    
-    if token:
-        headers['Authorization'] = f'token {token}'
+    if pat_token:
+        # Use GraphQL API with PAT to get private commits
+        headers = {
+            'Authorization': f'Bearer {pat_token}',
+            'Content-Type': 'application/json'
+        }
+        graphql_url = "https://api.github.com/graphql"
+        query = """
+        query($userName:String!) {
+          user(login: $userName){
+            contributionsCollection {
+              contributionCalendar {
+                totalContributions
+                weeks {
+                  contributionDays {
+                    contributionCount
+                    date
+                  }
+                }
+              }
+            }
+          }
+        }
+        """
+        payload = {
+            "query": query,
+            "variables": {"userName": username}
+        }
         
+        try:
+            req = urllib.request.Request(graphql_url, data=json.dumps(payload).encode('utf-8'), headers=headers)
+            with urllib.request.urlopen(req) as response:
+                data = json.loads(response.read().decode())
+                calendar = data['data']['user']['contributionsCollection']['contributionCalendar']
+                
+                total_commits = calendar['totalContributions']
+                
+                days = []
+                for week in calendar['weeks']:
+                    days.extend(week['contributionDays'])
+                
+                # Get today's commits directly from the calendar
+                todays_commits = 0
+                for day in reversed(days):
+                    if day['date'] == today_str:
+                        todays_commits = day['contributionCount']
+                        break
+                
+                # Calculate streak
+                days.reverse()
+                streak = 0
+                for day in days:
+                    count = day['contributionCount']
+                    date = day['date']
+                    if count > 0:
+                        streak += 1
+                    elif date == today_str:
+                        continue
+                    else:
+                        break
+                        
+                return todays_commits, streak, total_commits
+        except Exception as e:
+            print(f"Error fetching private stats with PAT: {e}")
+            print("Falling back to public scraper...")
+
+    # Fallback: Public Web Scraper (Public commits only)
     todays_commits = 0
+    streak = 0
+    total_commits = 0
+    
     try:
+        # Get today's commits via search (public only)
+        search_url = f"https://api.github.com/search/commits?q=author:{username}+committer-date:{today_str}"
+        headers = {'User-Agent': 'commit-counter-script'}
         req = urllib.request.Request(search_url, headers=headers)
         with urllib.request.urlopen(req) as response:
             data = json.loads(response.read().decode())
             todays_commits = data.get('total_count', 0)
     except Exception as e:
-        print(f"Error fetching today's commits: {e}")
+        print(f"Error fetching public today's commits: {e}")
 
-    # For Streak and Total, we scrape the public contributions graph
-    # This avoids GITHUB_TOKEN permission issues entirely
-    streak = 0
-    total_commits = 0
-    
     try:
         import re
         url = f"https://github.com/users/{username}/contributions"
@@ -41,12 +99,10 @@ def get_stats(username):
         with urllib.request.urlopen(req) as response:
             html = response.read().decode('utf-8')
             
-        # 1. Parse total contributions
         total_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s+contributions\s+in\s+the\s+last\s+year', html)
         if total_match:
             total_commits = int(total_match.group(1).replace(',', ''))
             
-        # 2. Parse daily contributions for streak
         td_pattern = re.compile(r'<td[^>]*id="([^"]+)"[^>]*data-date="([^"]+)"')
         tds = td_pattern.findall(html)
         date_by_id = {tid: date for tid, date in tds}
@@ -63,7 +119,6 @@ def get_stats(username):
                     count = 0 if count_str == 'No' else int(count_str)
                     contributions[date_by_id[tid]] = count
                     
-        # Calculate streak
         sorted_dates = sorted(contributions.keys(), reverse=True)
         current_streak = 0
         for date in sorted_dates:
@@ -71,7 +126,7 @@ def get_stats(username):
             if count > 0:
                 current_streak += 1
             elif date == today_str:
-                continue # 0 commits today doesn't break yesterday's streak yet
+                continue
             else:
                 break
                 
