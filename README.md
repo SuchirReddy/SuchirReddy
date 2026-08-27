@@ -19,9 +19,7 @@
 
   <!-- Spiderweb Counters -->
   <div align="center">
-    <img src="./web-today.svg" alt="Today's Commits" width="15%" />
-    <img src="./web-streak.svg" alt="Commit Streak" width="15%" />
-    <img src="./web-total.svg" alt="Total Commits" width="15%" />
+    <img src="./web-today.svg" alt="Today's Commits" width="20%" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./web-streak.svg" alt="Commit Streak" width="20%" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./web-total.svg" alt="Total Commits" width="20%" />
   </div>
   <br/><br/>
 
