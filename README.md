@@ -4,7 +4,7 @@
   <img src="./spiderman.svg?v=2" align="right" width="160" alt="Hanging Spider-Man" />
   <!-- Driver Intro & Podium Section (Borderless Side-by-Side) -->
   <div align="center">
-    <img src="./about-me.svg?v=2" alt="About Suchir" width="48%" /><img src="./spiderman-podium.svg?v=2" alt="Spider-Man Podium" width="28%" />
+    <img src="./about-me.svg?v=2" alt="About Suchir" width="45%" />&nbsp;&nbsp;<img src="./spiderman-podium.svg?v=2" alt="Spider-Man Podium" width="25%" />
   </div>
   <br/>
 
@@ -15,6 +15,14 @@
   <!-- 🌆 City Skyline Billboards (Tech Stack) -->
   <img src="./skyline-stack.svg?v=1" alt="City Skyline Tech Stack Billboards" width="100%" />
   
+  <br/><br/>
+
+  <!-- Spiderweb Counters -->
+  <div align="center">
+    <img src="./web-today.svg" alt="Today's Commits" width="15%" />
+    <img src="./web-streak.svg" alt="Commit Streak" width="15%" />
+    <img src="./web-total.svg" alt="Total Commits" width="15%" />
+  </div>
   <br/><br/>
 
   <!-- 🚀 Deployed Project Cards -->
