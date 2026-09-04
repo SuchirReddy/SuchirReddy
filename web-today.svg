@@ -34,5 +34,5 @@
 
   <!-- Text overlays -->
   <text x="75" y="60" class="title">TODAY</text>
-  <text x="75" y="105" class="value">40</text>
+  <text x="75" y="105" class="value">48</text>
 </svg>
