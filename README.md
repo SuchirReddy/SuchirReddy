@@ -13,7 +13,7 @@
   <br/><br/>
   
   <!-- 🌆 City Skyline Billboards (Tech Stack) -->
-  <img src="./skyline-stack.svg?v=1" alt="City Skyline Tech Stack Billboards" width="100%" />
+  <img src="./skyline-stack.svg?v=2" alt="City Skyline Tech Stack Billboards" width="100%" />
   
   <br/><br/>
 
