@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 350" width="100%">
+  <defs>
+    <!-- Comic Halftone Pattern -->
+    <pattern id="halftone" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <circle cx="3" cy="3" r="2" fill="#E23636" opacity="0.15" />
+    </pattern>
+    <style>
+      .comic-title { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 32px; font-weight: 900; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+      .comic-title-shadow-cyan { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 32px; font-weight: 900; fill: #00FFFF; text-transform: uppercase; letter-spacing: 1px; animation: glitch-anim-1 2s infinite linear alternate-reverse; mix-blend-mode: screen; }
+      .comic-title-shadow-red { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 32px; font-weight: 900; fill: #E23636; text-transform: uppercase; letter-spacing: 1px; animation: glitch-anim-2 3s infinite linear alternate-reverse; mix-blend-mode: screen; }
+      
+      .year-text { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 28px; font-weight: 900; fill: #FFFFFF; text-transform: uppercase; }
+      .desc-text { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 14px; font-weight: 700; fill: #000000; line-height: 1.2; }
+      
+      .panel-border { stroke: #FFFFFF; stroke-width: 4; stroke-linejoin: round; fill: url(#halftone); }
+      .timeline-box { stroke: #000000; stroke-width: 3; stroke-linejoin: miter; fill: #FFEB3B; }
+      
+      .web-line { stroke: #FFFFFF; stroke-width: 6; opacity: 0.8; stroke-linecap: round; }
+      .bg-web { stroke: #FFFFFF; stroke-width: 2; opacity: 0.15; stroke-linecap: round; }
+    </style>
+    <style>
+      @keyframes glitch-anim-1 {
+        0% { transform: translate(0, 0); opacity: 1; }
+        10% { transform: translate(-3px, 2px); opacity: 0.8; }
+        20% { transform: translate(4px, -1px); opacity: 1; }
+        30% { transform: translate(-1px, 4px); opacity: 0.9; }
+        40% { transform: translate(2px, -3px); opacity: 1; }
+        50% { transform: translate(-4px, 1px); opacity: 0.7; }
+        60% { transform: translate(3px, 3px); opacity: 1; }
+        70% { transform: translate(-2px, -2px); opacity: 0.8; }
+        80% { transform: translate(1px, 4px); opacity: 1; }
+        90% { transform: translate(-3px, -1px); opacity: 0.9; }
+        100% { transform: translate(0, 0); opacity: 1; }
+      }
+      
+      @keyframes glitch-anim-2 {
+        0% { transform: translate(0, 0); opacity: 1; }
+        10% { transform: translate(3px, -2px); opacity: 0.9; }
+        20% { transform: translate(-4px, 1px); opacity: 0.8; }
+        30% { transform: translate(1px, -4px); opacity: 1; }
+        40% { transform: translate(-2px, 3px); opacity: 0.9; }
+        50% { transform: translate(4px, -1px); opacity: 1; }
+        60% { transform: translate(-3px, -3px); opacity: 0.8; }
+        70% { transform: translate(2px, 2px); opacity: 1; }
+        80% { transform: translate(-1px, -4px); opacity: 0.9; }
+        90% { transform: translate(3px, 1px); opacity: 1; }
+        100% { transform: translate(0, 0); opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect x="10" y="10" width="980" height="330" rx="14" fill="#050505" stroke="#222" stroke-width="2" />
+  
+  <!-- Main Comic Panel Background (Jagged) -->
+  <polygon points="18,18 972,25 982,322 12,312" class="panel-border" />
+
+  <!-- Background Web Detail -->
+  <g transform="translate(500, 175)">
+    <path d="M 0 0 L -500 -175 M 0 0 L 0 -175 M 0 0 L 500 -175 M 0 0 L -500 0 M 0 0 L 500 0 M 0 0 L -500 175 M 0 0 L 0 175 M 0 0 L 500 175" class="bg-web" />
+    <path d="M -80 -80 Q 0 -50 80 -80 Q 50 0 80 80 Q 0 50 -80 80 Q -50 0 -80 -80 Z" class="bg-web" fill="none" />
+    <path d="M -160 -160 Q 0 -110 160 -160 Q 110 0 160 160 Q 0 110 -160 160 Q -110 0 -160 -160 Z" class="bg-web" fill="none" />
+    <path d="M -240 -240 Q 0 -170 240 -240 Q 170 0 240 240 Q 0 170 -240 240 Q -170 0 -240 -240 Z" class="bg-web" fill="none" />
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(40, 50) rotate(-1)">
+    <text x="4" y="4" class="comic-title-shadow-cyan">MY JOURNEY</text>
+    <text x="-4" y="-4" class="comic-title-shadow-red">MY JOURNEY</text>
+    <text x="0" y="0" class="comic-title">MY JOURNEY</text>
+  </g>
+
+  <!-- Connecting Line -->
+  <path d="M 120 180 L 860 180" class="web-line" />
+
+  <!-- Node 2023 -->
+  <g transform="translate(50, 120)">
+    <circle cx="70" cy="60" r="18" fill="#E23636" stroke="#000" stroke-width="3" />
+    <circle cx="70" cy="60" r="12" fill="none" stroke="#000" stroke-width="2" />
+    <circle cx="70" cy="60" r="6" fill="#000" />
+    <path d="M 52 60 L 88 60 M 70 42 L 70 78 M 57 47 L 83 73 M 57 73 L 83 47" stroke="#000" stroke-width="1.5" />
+    
+    <text x="35" y="30" class="year-text">2023</text>
+    <!-- Box below -->
+    <g transform="translate(0, 90)">
+      <polygon points="5,5 165,0 155,95 -5,100" fill="#E23636" opacity="0.6" />
+      <polygon points="0,0 160,-5 150,90 -10,95" class="timeline-box" />
+      <text x="0" y="25" class="desc-text">
+        <tspan x="10" dy="0">Wrote my first lines</tspan>
+        <tspan x="10" dy="20">of code &amp; shipped my</tspan>
+        <tspan x="10" dy="20">first web applications.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Node 2024 -->
+  <g transform="translate(230, 90)">
+    <circle cx="70" cy="90" r="18" fill="#00BFFF" stroke="#000" stroke-width="3" />
+    <circle cx="70" cy="90" r="12" fill="none" stroke="#000" stroke-width="2" />
+    <circle cx="70" cy="90" r="6" fill="#000" />
+    <path d="M 52 90 L 88 90 M 70 72 L 70 108 M 57 77 L 83 103 M 57 103 L 83 77" stroke="#000" stroke-width="1.5" />
+    
+    <text x="35" y="140" class="year-text">2024</text>
+    <!-- Box above -->
+    <g transform="translate(0, -20)">
+      <polygon points="5,5 165,0 155,95 -5,100" fill="#0047BB" opacity="0.6" />
+      <polygon points="0,0 160,-5 150,90 -10,95" class="timeline-box" />
+      <text x="0" y="25" class="desc-text">
+        <tspan x="10" dy="0">Architected &amp; built</tspan>
+        <tspan x="10" dy="20">two full-scale SaaS</tspan>
+        <tspan x="10" dy="20">platforms.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Node 2025 -->
+  <g transform="translate(410, 120)">
+    <circle cx="70" cy="60" r="18" fill="#FFEB3B" stroke="#000" stroke-width="3" />
+    <circle cx="70" cy="60" r="12" fill="none" stroke="#000" stroke-width="2" />
+    <circle cx="70" cy="60" r="6" fill="#000" />
+    <path d="M 52 60 L 88 60 M 70 42 L 70 78 M 57 47 L 83 73 M 57 73 L 83 47" stroke="#000" stroke-width="1.5" />
+    
+    <text x="35" y="30" class="year-text">2025</text>
+    <!-- Box below -->
+    <g transform="translate(0, 90)">
+      <polygon points="5,5 165,0 155,95 -5,100" fill="#E23636" opacity="0.6" />
+      <polygon points="0,0 160,-5 150,90 -10,95" class="timeline-box" />
+      <text x="0" y="25" class="desc-text">
+        <tspan x="10" dy="0">Engineered four</tspan>
+        <tspan x="10" dy="20">complex custom</tspan>
+        <tspan x="10" dy="20">software solutions.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Node 2026 -->
+  <g transform="translate(590, 90)">
+    <circle cx="70" cy="90" r="18" fill="#E23636" stroke="#000" stroke-width="3" />
+    <circle cx="70" cy="90" r="12" fill="none" stroke="#000" stroke-width="2" />
+    <circle cx="70" cy="90" r="6" fill="#000" />
+    <path d="M 52 90 L 88 90 M 70 72 L 70 108 M 57 77 L 83 103 M 57 103 L 83 77" stroke="#000" stroke-width="1.5" />
+    
+    <text x="35" y="140" class="year-text">2026</text>
+    <!-- Box above -->
+    <g transform="translate(0, -20)">
+      <polygon points="5,5 165,0 155,95 -5,100" fill="#0047BB" opacity="0.6" />
+      <polygon points="0,0 160,-5 150,90 -10,95" class="timeline-box" />
+      <text x="0" y="25" class="desc-text">
+        <tspan x="10" dy="0">Scaling my agency</tspan>
+        <tspan x="10" dy="20">&amp; expanding the</tspan>
+        <tspan x="10" dy="20">digital multiverse!</tspan>
+      </text>
+    </g>
+  </g>
+  
+  <!-- Node 2027 (Spiderman) -->
+  <g transform="translate(770, 120)">
+    <circle cx="70" cy="60" r="18" fill="#FFEB3B" stroke="#000" stroke-width="3" />
+    <circle cx="70" cy="60" r="12" fill="none" stroke="#000" stroke-width="2" />
+    <circle cx="70" cy="60" r="6" fill="#000" />
+    <path d="M 52 60 L 88 60 M 70 42 L 70 78 M 57 47 L 83 73 M 57 73 L 83 47" stroke="#000" stroke-width="1.5" />
+    
+    <text x="35" y="30" class="year-text">2027</text>
+    
+    <!-- Standing Spiderman waving -->
+    <g transform="translate(70, -15) scale(0.32)">
+      <!-- Legs (Standing) -->
+      <path d="M -15 80 L -25 160 L -35 160 L -30 170 L -15 170 Z" fill="#E23636" stroke="#111" stroke-width="4" stroke-linejoin="round" />
+      <path d="M 15 80 L 25 160 L 35 160 L 30 170 L 15 170 Z" fill="#E23636" stroke="#111" stroke-width="4" stroke-linejoin="round" />
+      <path d="M -20 50 L -15 80 M 20 50 L 15 80" fill="none" stroke="#0047BB" stroke-width="18" stroke-linecap="round" />
+      <path d="M -20 50 L -15 80 M 20 50 L 15 80" fill="none" stroke="#111" stroke-width="22" stroke-linecap="round" opacity="0.3" />
+      
+      <!-- Torso -->
+      <path d="M -28 -5 L 28 -5 L 22 55 L -22 55 Z" fill="#0047BB" stroke="#111" stroke-width="4" stroke-linejoin="round" />
+      <path d="M -15 -5 L 15 -5 L 10 55 L -10 55 Z" fill="#E23636" stroke="#111" stroke-width="3" stroke-linejoin="round" />
+      
+      <!-- Spider Emblem -->
+      <circle cx="0" cy="20" r="4" fill="#111" />
+      <path d="M -7 13 L 0 20 L -7 27 M 7 13 L 0 20 L 7 27" fill="none" stroke="#111" stroke-width="2" />
+      
+      <!-- Arms -->
+      <!-- Left arm resting on hip -->
+      <path d="M -28 5 Q -50 25 -35 55 L -20 55" fill="none" stroke="#0047BB" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Right arm raising/waving -->
+      <path d="M 28 5 Q 50 -10 60 -40 L 50 -50" fill="none" stroke="#0047BB" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+      
+      <!-- Gloves -->
+      <path d="M -30 45 L -20 55" fill="none" stroke="#E23636" stroke-width="13" stroke-linecap="round" />
+      <path d="M 55 -25 L 50 -50" fill="none" stroke="#E23636" stroke-width="13" stroke-linecap="round" />
+
+      <!-- Head Base -->
+      <g transform="translate(0, -35) scale(0.65)">
+          <ellipse cx="0" cy="0" rx="65" ry="85" fill="#E23636" stroke="#111" stroke-width="4" />
+          <g stroke="#111" stroke-width="2.5" opacity="0.8">
+            <path d="M 0 -85 L 0 85" />
+            <path d="M -65 0 L 65 0" />
+            <path d="M -46 -60 L 46 60" />
+            <path d="M 46 -60 L -46 60" />
+            <path d="M -25 -78 L 25 78" />
+            <path d="M 25 -78 L -25 78" />
+            <path d="M -60 -25 L 60 25" />
+            <path d="M 60 -25 L -60 25" />
+            <ellipse cx="0" cy="0" rx="18" ry="24" fill="none" />
+            <ellipse cx="0" cy="0" rx="36" ry="48" fill="none" />
+            <ellipse cx="0" cy="0" rx="52" ry="68" fill="none" />
+          </g>
+          <g transform="translate(0, -10)">
+            <path d="M -4 12 Q -25 -20 -45 -40 Q -60 -25 -62 -10 Q -40 35 -15 25 Q -10 18 -4 12 Z" fill="#111" stroke="#111" stroke-width="4" stroke-linejoin="round" />
+            <path d="M -9 11 Q -28 -15 -42 -32 Q -53 -20 -55 -10 Q -38 25 -18 19 Q -13 15 -9 11 Z" fill="#FFF" />
+            <path d="M 4 12 Q 25 -20 45 -40 Q 60 -25 62 -10 Q 40 35 15 25 Q 10 18 4 12 Z" fill="#111" stroke="#111" stroke-width="4" stroke-linejoin="round" />
+            <path d="M 9 11 Q 28 -15 42 -32 Q 53 -20 55 -10 Q 38 25 18 19 Q 13 15 9 11 Z" fill="#FFF" />
+          </g>
+      </g>
+    </g>
+
+    <!-- Box below -->
+    <g transform="translate(0, 90)">
+      <polygon points="5,5 165,0 155,95 -5,100" fill="#FFEB3B" opacity="0.6" />
+      <polygon points="0,0 160,-5 150,90 -10,95" class="timeline-box" />
+      <text x="0" y="25" class="desc-text">
+        <tspan x="10" dy="0">Ready for the</tspan>
+        <tspan x="10" dy="20">next big leap.</tspan>
+        <tspan x="10" dy="20">Stay tuned!</tspan>
+      </text>
+    </g>
+  </g>
+
+</svg>

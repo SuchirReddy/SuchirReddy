@@ -97,10 +97,10 @@
     <!-- Yellow Narrator Box -->
     <polygon points="0,0 490,-5 480,110 -10,115" class="box-border" />
     <text x="15" y="25" class="body-text">
-      <tspan x="15" dy="0">I build high-impact software from the ground up.</tspan>
-      <tspan x="15" dy="26">Obsessed with performance and design, I specialize in</tspan>
-      <tspan x="15" dy="26">architecting scalable full-stack systems and crafting</tspan>
-      <tspan x="15" dy="26">intuitive digital experiences that solve real problems.</tspan>
+      <tspan x="15" dy="0">I architect and build production-ready systems.</tspan>
+      <tspan x="15" dy="26">From concept to deployment, I focus on shipping</tspan>
+      <tspan x="15" dy="26">scalable software solutions and clean code</tspan>
+      <tspan x="15" dy="26">that drives impact and solves real problems.</tspan>
     </text>
   </g>
 

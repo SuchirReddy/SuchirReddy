@@ -7,6 +7,10 @@
     <img src="./about-me.svg?v=2" alt="About Suchir" width="45%" />&nbsp;&nbsp;<img src="./spiderman-podium.svg?v=2" alt="Spider-Man Podium" width="25%" />
   </div>
   <br/>
+  <div align="center">
+    <img src="./about-me-2.svg?v=6" alt="My Journey" width="98%" />
+  </div>
+  <br/>
 
   <!-- 🚦 Tech Stack Header -->
   <img src="./stack-header.svg?v=2" alt="Tech Stack Header" width="98%" />
