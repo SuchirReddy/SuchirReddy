@@ -5,7 +5,7 @@
       <circle cx="2" cy="2" r="1.2" fill="#E23636" opacity="0.15" />
     </pattern>
     <style>
-      .comic-title { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 18px; font-weight: 800; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; transition: fill 0.3s ease, transform 0.2s ease; transform-origin: center; }
+      .comic-title { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 13px; font-weight: 800; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; transition: fill 0.3s ease, transform 0.2s ease; transform-origin: center; }
       .comic-label { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 10px; font-weight: 700; fill: #FFFFFF; letter-spacing: 2px; }
       .panel-bg { fill: #111111; }
       .panel-border { stroke: #FFFFFF; stroke-width: 3; stroke-linejoin: miter; transition: stroke 0.3s ease; fill: url(#halftone); }
@@ -37,6 +37,6 @@
   <g transform="rotate(-1.5 120 55)">
     <rect x="15" y="15" width="115" height="18" fill="#E23636" transform="skewX(-15)" />
     <text x="25" y="27" class="comic-label">HOSPITALITY OS</text>
-    <text x="120" y="65" text-anchor="middle" class="comic-title">cafe-verona.app</text>
+    <text x="120" y="65" text-anchor="middle" class="comic-title">vora.vyuhavarahi.in</text>
   </g>
 </svg>

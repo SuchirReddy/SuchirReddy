@@ -6,7 +6,8 @@
     </pattern>
     <style>
       .comic-title { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 13px; font-weight: 800; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; transition: fill 0.3s ease, transform 0.2s ease; transform-origin: center; }
-      .comic-label { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 10px; font-weight: 700; fill: #FFFFFF; letter-spacing: 2px; }
+      .comic-label { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 9px; font-weight: 700; fill: #FFFFFF; letter-spacing: 1px; }
+      .comic-wip { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 7.5px; font-weight: 800; fill: #000000; letter-spacing: 0.8px; }
       .panel-bg { fill: #111111; }
       .panel-border { stroke: #FFFFFF; stroke-width: 3; stroke-linejoin: miter; transition: stroke 0.3s ease; fill: url(#halftone); }
       .web-line { stroke: #FFFFFF; stroke-width: 1.5; opacity: 0.25; stroke-linecap: round; }
@@ -35,8 +36,13 @@
 
   <!-- Text Content -->
   <g transform="rotate(-1.5 120 55)">
-    <rect x="15" y="15" width="115" height="18" fill="#E23636" transform="skewX(-15)" />
-    <text x="25" y="27" class="comic-label">ECOMMERCE</text>
-    <text x="120" y="65" text-anchor="middle" class="comic-title">aura-ecommerce.app</text>
+    <rect x="17" y="15" width="92" height="18" fill="#E23636" transform="skewX(-15)" />
+    <text x="60" y="27" text-anchor="middle" class="comic-label">RETAILS + POS</text>
+    
+    <!-- WIP Badge -->
+    <rect x="115" y="15" width="106" height="18" fill="#FFB800" transform="skewX(-15)" />
+    <text x="165" y="27" text-anchor="middle" class="comic-wip">WORK IN PROGRESS</text>
+
+    <text x="120" y="65" text-anchor="middle" class="comic-title">nivara.vyuhavarahi.in</text>
   </g>
 </svg>

@@ -29,16 +29,26 @@
   </div>
   <br/><br/>
 
+  <!-- 💼 Ventures Section -->
+  <div align="center">
+    <img src="./ventures-header.svg?v=1" alt="Ventures Header" width="98%" />
+    <br/><br/>
+    <a href="https://vyuhavarahi.in" target="_blank" rel="noopener noreferrer"><img src="./venture-vyuhavarahi.svg?v=3" alt="Vyuhavarahi" width="32%" /></a>
+    <a href="https://orlyn.in" target="_blank" rel="noopener noreferrer"><img src="./venture-orlyn.svg?v=3" alt="Orlyn AI Studio" width="32%" /></a>
+    <a href="https://nea.orlyn.in" target="_blank" rel="noopener noreferrer"><img src="./venture-neavoice.svg?v=3" alt="NeaVoice AI Voice" width="32%" /></a>
+  </div>
+  <br/><br/>
+
   <!-- 🚀 Deployed Project Cards -->
   <div align="center">
     <img src="./projects-header.svg?v=1" alt="Some of My Works Header" width="98%" />
     <br/><br/>
     <a href="https://aveils.in" target="_blank" rel="noopener noreferrer"><img src="./project-aveils.svg?v=1" alt="Aveils" width="32%" /></a>
-    <a href="https://cafe-verona.vercel.app" target="_blank" rel="noopener noreferrer"><img src="./project-cafe.svg?v=1" alt="Cafe Verona" width="32%" /></a>
+    <a href="https://cafe-verona.vercel.app" target="_blank" rel="noopener noreferrer"><img src="./project-cafe.svg?v=2" alt="Cafe Verona" width="32%" /></a>
     <a href="https://vera.vyuhavarahi.in" target="_blank" rel="noopener noreferrer"><img src="./project-vera.svg?v=1" alt="Vera" width="32%" /></a>
     <br/>
     <a href="https://medicare.vyuhavarahi.in" target="_blank" rel="noopener noreferrer"><img src="./project-medicare.svg?v=1" alt="Medicare" width="32%" /></a>
-    <a href="https://aura-ecommerce-one.vercel.app" target="_blank" rel="noopener noreferrer"><img src="./project-ecommerce.svg?v=1" alt="Aura Ecommerce" width="32%" /></a>
+    <a href="https://aura-ecommerce-one.vercel.app" target="_blank" rel="noopener noreferrer"><img src="./project-ecommerce.svg?v=4" alt="Aura Ecommerce" width="32%" /></a>
     <a href="https://urbioo.vercel.app" target="_blank" rel="noopener noreferrer"><img src="./project-urbioo.svg?v=1" alt="Urbioo" width="32%" /></a>
     <br/><br/>
     <img src="./project-secret.svg" alt="Top Secret: Private Commits" width="98%" />

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 110" width="100%" height="110">
+  <defs>
+    <!-- Spider-Verse Halftone Pattern -->
+    <pattern id="halftone-cyan" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <circle cx="2" cy="2" r="1.2" fill="#00FFFF" opacity="0.12" />
+    </pattern>
+    <pattern id="halftone-magenta" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(60)">
+      <circle cx="2" cy="2" r="1.2" fill="#FF00FF" opacity="0.12" />
+    </pattern>
+
+    <style>
+      .comic-title { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 16px; font-weight: 900; fill: #FFFFFF; text-transform: uppercase; letter-spacing: 1.5px; }
+      .glitch-cyan { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 16px; font-weight: 900; fill: #00FFFF; text-transform: uppercase; letter-spacing: 1.5px; animation: glitch-anim-1 2.3s infinite linear alternate-reverse; opacity: 0.85; mix-blend-mode: screen; }
+      .glitch-magenta { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', Impact, sans-serif; font-size: 16px; font-weight: 900; fill: #FF00FF; text-transform: uppercase; letter-spacing: 1.5px; animation: glitch-anim-2 3.0s infinite linear alternate-reverse; opacity: 0.85; mix-blend-mode: screen; }
+      
+      .comic-label { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; font-size: 8.5px; font-weight: 800; fill: #000000; letter-spacing: 1.5px; text-transform: uppercase; }
+      .tag-bg { fill: #FFEB3B; }
+      
+      .panel-bg { fill: #080808; }
+      .panel-border { stroke: #FFFFFF; stroke-width: 2.5; stroke-linejoin: miter; transition: stroke 0.3s ease, filter 0.3s ease; }
+      .chromatic-cyan { fill: #00FFFF; opacity: 0.7; animation: glitch-anim-1 2.6s infinite linear alternate-reverse; }
+      .chromatic-magenta { fill: #FF00FF; opacity: 0.7; animation: glitch-anim-2 3.0s infinite linear alternate-reverse; }
+      
+      .cyber-dash { stroke: #FFEB3B; stroke-width: 1; opacity: 0.35; stroke-dasharray: 6 3; fill: none; transition: opacity 0.3s ease; }
+      .corner-tick { stroke: #FFEB3B; stroke-width: 2; fill: none; }
+      
+      svg:hover .panel-border { stroke: #FFEB3B; stroke-width: 3; filter: drop-shadow(0 0 6px #FFEB3B); }
+      svg:hover .cyber-dash { opacity: 0.8; stroke: #FFFFFF; }
+      svg:hover .tag-bg { fill: #00FFFF; }
+      svg:hover .comic-label { fill: #000000; }
+
+      @keyframes glitch-anim-1 {
+        0% { transform: translate(0, 0); opacity: 0.9; }
+        15% { transform: translate(-2px, 1.5px); opacity: 0.7; }
+        30% { transform: translate(2.5px, -1px); opacity: 1; }
+        45% { transform: translate(-1.5px, 2px); opacity: 0.8; }
+        60% { transform: translate(2px, -2.5px); opacity: 0.9; }
+        75% { transform: translate(-2.5px, 0.5px); opacity: 0.6; }
+        85% { transform: translate(3.5px, -1px); opacity: 1; }
+        100% { transform: translate(0, 0); opacity: 0.9; }
+      }
+
+      @keyframes glitch-anim-2 {
+        0% { transform: translate(0, 0); opacity: 0.9; }
+        20% { transform: translate(2.5px, -1px); opacity: 0.8; }
+        35% { transform: translate(-2.5px, 2px); opacity: 1; }
+        50% { transform: translate(1px, -2px); opacity: 0.7; }
+        70% { transform: translate(-2px, 1.5px); opacity: 0.9; }
+        85% { transform: translate(2.5px, 2px); opacity: 0.6; }
+        100% { transform: translate(0, 0); opacity: 0.9; }
+      }
+    </style>
+  </defs>
+
+  <!-- Chromatic Aberration Shadow Layers (Cyber Chamfered Octagon) -->
+  <polygon points="25,11 221,11 235,25 235,91 221,105 25,105 11,91 11,25" class="chromatic-magenta" />
+  <polygon points="19,5 215,5 229,19 229,85 215,99 19,99 5,85 5,19" class="chromatic-cyan" />
+  
+  <!-- Main Panel Base -->
+  <polygon points="22,8 218,8 232,22 232,88 218,102 22,102 8,88 8,22" class="panel-bg" />
+  
+  <!-- Dual Halftone Printing Texture -->
+  <polygon points="22,8 218,8 232,22 232,88 218,102 22,102 8,88 8,22" fill="url(#halftone-cyan)" />
+  <polygon points="22,8 218,8 232,22 232,88 218,102 22,102 8,88 8,22" fill="url(#halftone-magenta)" />
+  
+  <!-- Inner Cyber Dashed Contour -->
+  <polygon points="27,14 213,14 225,26 225,84 213,96 27,96 15,84 15,26" class="cyber-dash" />
+
+  <!-- White Panel Outline (Chamfered Octagon) -->
+  <polygon points="22,8 218,8 232,22 232,88 218,102 22,102 8,88 8,22" fill="none" class="panel-border" />
+
+  <!-- Corner Tech Accent Reticles -->
+  <path d="M 12 30 L 12 24 L 24 12 L 30 12" class="corner-tick" />
+  <path d="M 228 80 L 228 86 L 216 98 L 210 98" class="corner-tick" stroke="#FF00FF" />
+
+  <!-- Content Group -->
+  <g transform="translate(0, 0)">
+    <!-- Chamfer-Aligned Category Tag -->
+    <g transform="translate(26, 14)">
+      <!-- Cyan Glitch Tag Shadow -->
+      <polygon points="2,0 75,0 68,16 0,16" fill="#00FFFF" opacity="0.6" />
+      <!-- Magenta Glitch Tag Shadow -->
+      <polygon points="4,2 77,2 70,18 2,18" fill="#FF00FF" opacity="0.6" />
+      <!-- Main Tag -->
+      <polygon points="3,1 76,1 69,17 1,17" class="tag-bg" />
+      <text x="12" y="12" class="comic-label">AI VOICE</text>
+    </g>
+
+    <!-- RGB Split Glitch Title -->
+    <g transform="translate(120, 64)">
+      <text x="-2" y="-1" text-anchor="middle" class="glitch-cyan">NEA.ORLYN.IN</text>
+      <text x="2" y="1" text-anchor="middle" class="glitch-magenta">NEA.ORLYN.IN</text>
+      <text x="0" y="0" text-anchor="middle" class="comic-title">NEA.ORLYN.IN</text>
+    </g>
+
+    <!-- Bottom Status Dots -->
+    <g transform="translate(120, 88)" opacity="0.6">
+      <circle cx="-16" cy="0" r="1.5" fill="#FFEB3B" />
+      <circle cx="-8" cy="0" r="1.5" fill="#FFFFFF" />
+      <circle cx="0" cy="0" r="1.5" fill="#FFEB3B" />
+      <circle cx="8" cy="0" r="1.5" fill="#FFFFFF" />
+      <circle cx="16" cy="0" r="1.5" fill="#00FFFF" />
+    </g>
+  </g>
+</svg>
